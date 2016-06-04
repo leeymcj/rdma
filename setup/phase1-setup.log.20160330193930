@@ -1,0 +1,687 @@
++ FLAG=/opt/.usersetup
++ SETUPFLAG=/opt/.setup_in_process
++ '[' '!' -f /opt/.setup_in_process ']'
++ touch /opt/.setup_in_process
++ touch /opt/.usersetup
+++ cat /etc/hosts
+++ grep cp-
+++ awk '{print $4}'
+++ sort
++ HOSTS=
++ let i=0
++ cat
++ tee /etc/profile.d/firstboot.sh
++ chmod +x /etc/profile.d/firstboot.sh
++ cp /tmp/setup/phase2-setup.sh /usr/local/bin/phase2-setup.sh
++ cp /tmp/setup/pmem-setup.sh /usr/local/bin/pmem-setup.sh
++ cp /tmp/setup/accelio-setup.sh /usr/local/bin/accelio-setup.sh
++ cp /tmp/setup/grappa-setup.sh /usr/local/bin/grappa-setup.sh
++ chmod +x /usr/local/bin/phase2-setup.sh
++ chmod +x /usr/local/bin/pmem-setup.sh
++ chmod +x /usr/local/bin/accelio-setup.sh
++ chmod +x /usr/local/bin/grappa-setup.sh
+++ lsblk -o NAME,MODEL
+++ grep SSD
+++ awk 'NR==1{print $1}'
++ SSD=
++ '[' -n '' ']'
++ unset SSD
+++ cat /etc/redhat-release
++ [[ CentOS Linux release 7.2.1511 (Core)  =~ CentOS.* ]]
++ yum -y update
+Loaded plugins: fastestmirror
+Repodata is over 2 weeks old. Install yum-cron? Or run: yum makecache fast
+Determining fastest mirrors
+ * base: mirror.chpc.utah.edu
+ * extras: centos.den.host-engine.com
+ * updates: mirror.chpc.utah.edu
+Resolving Dependencies
+--> Running transaction check
+---> Package bind-libs.x86_64 32:9.9.4-29.el7_2.2 will be updated
+---> Package bind-libs.x86_64 32:9.9.4-29.el7_2.3 will be an update
+---> Package bind-libs-lite.x86_64 32:9.9.4-29.el7_2.2 will be updated
+---> Package bind-libs-lite.x86_64 32:9.9.4-29.el7_2.3 will be an update
+---> Package bind-license.noarch 32:9.9.4-29.el7_2.2 will be updated
+---> Package bind-license.noarch 32:9.9.4-29.el7_2.3 will be an update
+---> Package bind-utils.x86_64 32:9.9.4-29.el7_2.2 will be updated
+---> Package bind-utils.x86_64 32:9.9.4-29.el7_2.3 will be an update
+---> Package git.x86_64 0:1.8.3.1-6.el7 will be updated
+---> Package git.x86_64 0:1.8.3.1-6.el7_2.1 will be an update
+---> Package glusterfs.x86_64 0:3.7.1-16.el7 will be updated
+---> Package glusterfs.x86_64 0:3.7.1-16.0.1.el7.centos will be an update
+---> Package glusterfs-api.x86_64 0:3.7.1-16.el7 will be updated
+---> Package glusterfs-api.x86_64 0:3.7.1-16.0.1.el7.centos will be an update
+---> Package glusterfs-client-xlators.x86_64 0:3.7.1-16.el7 will be updated
+---> Package glusterfs-client-xlators.x86_64 0:3.7.1-16.0.1.el7.centos will be an update
+---> Package glusterfs-libs.x86_64 0:3.7.1-16.el7 will be updated
+---> Package glusterfs-libs.x86_64 0:3.7.1-16.0.1.el7.centos will be an update
+---> Package libssh2.x86_64 0:1.4.3-10.el7 will be updated
+---> Package libssh2.x86_64 0:1.4.3-10.el7_2.1 will be an update
+---> Package nss-util.x86_64 0:3.19.1-4.el7_1 will be updated
+---> Package nss-util.x86_64 0:3.19.1-9.el7_2 will be an update
+---> Package openssh.x86_64 0:6.6.1p1-23.el7_2 will be updated
+---> Package openssh.x86_64 0:6.6.1p1-25.el7_2 will be an update
+---> Package openssh-clients.x86_64 0:6.6.1p1-23.el7_2 will be updated
+---> Package openssh-clients.x86_64 0:6.6.1p1-25.el7_2 will be an update
+---> Package openssh-server.x86_64 0:6.6.1p1-23.el7_2 will be updated
+---> Package openssh-server.x86_64 0:6.6.1p1-25.el7_2 will be an update
+---> Package openssl.x86_64 1:1.0.1e-51.el7_2.2 will be updated
+---> Package openssl.x86_64 1:1.0.1e-51.el7_2.4 will be an update
+---> Package openssl-devel.x86_64 1:1.0.1e-51.el7_2.2 will be updated
+---> Package openssl-devel.x86_64 1:1.0.1e-51.el7_2.4 will be an update
+---> Package openssl-libs.x86_64 1:1.0.1e-51.el7_2.2 will be updated
+---> Package openssl-libs.x86_64 1:1.0.1e-51.el7_2.4 will be an update
+---> Package openssl-perl.x86_64 1:1.0.1e-51.el7_2.2 will be updated
+---> Package openssl-perl.x86_64 1:1.0.1e-51.el7_2.4 will be an update
+---> Package perl-Git.noarch 0:1.8.3.1-6.el7 will be updated
+---> Package perl-Git.noarch 0:1.8.3.1-6.el7_2.1 will be an update
+---> Package tzdata.noarch 0:2016a-1.el7 will be updated
+---> Package tzdata.noarch 0:2016c-1.el7 will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                    Arch     Version                    Repository
+                                                                           Size
+================================================================================
+Updating:
+ bind-libs                  x86_64   32:9.9.4-29.el7_2.3        updates   1.0 M
+ bind-libs-lite             x86_64   32:9.9.4-29.el7_2.3        updates   724 k
+ bind-license               noarch   32:9.9.4-29.el7_2.3        updates    82 k
+ bind-utils                 x86_64   32:9.9.4-29.el7_2.3        updates   200 k
+ git                        x86_64   1.8.3.1-6.el7_2.1          updates   4.4 M
+ glusterfs                  x86_64   3.7.1-16.0.1.el7.centos    updates   422 k
+ glusterfs-api              x86_64   3.7.1-16.0.1.el7.centos    updates    60 k
+ glusterfs-client-xlators   x86_64   3.7.1-16.0.1.el7.centos    updates   732 k
+ glusterfs-libs             x86_64   3.7.1-16.0.1.el7.centos    updates   322 k
+ libssh2                    x86_64   1.4.3-10.el7_2.1           updates   134 k
+ nss-util                   x86_64   3.19.1-9.el7_2             updates    71 k
+ openssh                    x86_64   6.6.1p1-25.el7_2           updates   435 k
+ openssh-clients            x86_64   6.6.1p1-25.el7_2           updates   639 k
+ openssh-server             x86_64   6.6.1p1-25.el7_2           updates   436 k
+ openssl                    x86_64   1:1.0.1e-51.el7_2.4        updates   711 k
+ openssl-devel              x86_64   1:1.0.1e-51.el7_2.4        updates   1.2 M
+ openssl-libs               x86_64   1:1.0.1e-51.el7_2.4        updates   951 k
+ openssl-perl               x86_64   1:1.0.1e-51.el7_2.4        updates    59 k
+ perl-Git                   noarch   1.8.3.1-6.el7_2.1          updates    53 k
+ tzdata                     noarch   2016c-1.el7                updates   437 k
+
+Transaction Summary
+================================================================================
+Upgrade  20 Packages
+
+Total download size: 13 M
+Downloading packages:
+Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+http://lug.mtu.edu/centos/7.2.1511/updates/x86_64/Packages/bind-utils-9.9.4-29.el7_2.3.x86_64.rpm: [Errno 14] HTTP Error 404 - Not Found
+Trying other mirror.
+To address this issue please refer to the below knowledge base article 
+
+https://access.redhat.com/articles/1320623
+
+If above article doesn't help to resolve this issue please create a bug on https://bugs.centos.org/
+
+--------------------------------------------------------------------------------
+Total                                               10 MB/s |  13 MB  00:01     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : 1:openssl-libs-1.0.1e-51.el7_2.4.x86_64                     1/40 
+  Updating   : glusterfs-libs-3.7.1-16.0.1.el7.centos.x86_64               2/40 
+  Updating   : openssh-6.6.1p1-25.el7_2.x86_64                             3/40 
+  Updating   : 32:bind-license-9.9.4-29.el7_2.3.noarch                     4/40 
+  Updating   : 32:bind-libs-9.9.4-29.el7_2.3.x86_64                        5/40 
+  Updating   : openssh-clients-6.6.1p1-25.el7_2.x86_64                     6/40 
+  Updating   : perl-Git-1.8.3.1-6.el7_2.1.noarch                           7/40 
+  Updating   : git-1.8.3.1-6.el7_2.1.x86_64                                8/40 
+  Updating   : glusterfs-client-xlators-3.7.1-16.0.1.el7.centos.x86_64     9/40 
+  Updating   : glusterfs-3.7.1-16.0.1.el7.centos.x86_64                   10/40 
+  Updating   : 1:openssl-1.0.1e-51.el7_2.4.x86_64                         11/40 
+  Updating   : 1:openssl-perl-1.0.1e-51.el7_2.4.x86_64                    12/40 
+  Updating   : glusterfs-api-3.7.1-16.0.1.el7.centos.x86_64               13/40 
+  Updating   : 32:bind-utils-9.9.4-29.el7_2.3.x86_64                      14/40 
+  Updating   : 32:bind-libs-lite-9.9.4-29.el7_2.3.x86_64                  15/40 
+  Updating   : openssh-server-6.6.1p1-25.el7_2.x86_64                     16/40 
+  Updating   : libssh2-1.4.3-10.el7_2.1.x86_64                            17/40 
+  Updating   : 1:openssl-devel-1.0.1e-51.el7_2.4.x86_64                   18/40 
+  Updating   : nss-util-3.19.1-9.el7_2.x86_64                             19/40 
+  Updating   : tzdata-2016c-1.el7.noarch                                  20/40 
+  Cleanup    : glusterfs-api-3.7.1-16.el7.x86_64                          21/40 
+  Cleanup    : glusterfs-3.7.1-16.el7.x86_64                              22/40 
+  Cleanup    : 32:bind-utils-9.9.4-29.el7_2.2.x86_64                      23/40 
+  Cleanup    : 32:bind-libs-9.9.4-29.el7_2.2.x86_64                       24/40 
+  Cleanup    : glusterfs-client-xlators-3.7.1-16.el7.x86_64               25/40 
+  Cleanup    : 32:bind-libs-lite-9.9.4-29.el7_2.2.x86_64                  26/40 
+  Cleanup    : openssh-server-6.6.1p1-23.el7_2.x86_64                     27/40 
+  Cleanup    : git-1.8.3.1-6.el7.x86_64                                   28/40 
+  Cleanup    : perl-Git-1.8.3.1-6.el7.noarch                              29/40 
+  Cleanup    : 1:openssl-perl-1.0.1e-51.el7_2.2.x86_64                    30/40 
+  Cleanup    : 1:openssl-devel-1.0.1e-51.el7_2.2.x86_64                   31/40 
+  Cleanup    : openssh-clients-6.6.1p1-23.el7_2.x86_64                    32/40 
+  Cleanup    : openssh-6.6.1p1-23.el7_2.x86_64                            33/40 
+  Cleanup    : 1:openssl-1.0.1e-51.el7_2.2.x86_64                         34/40 
+  Cleanup    : glusterfs-libs-3.7.1-16.el7.x86_64                         35/40 
+  Cleanup    : libssh2-1.4.3-10.el7.x86_64                                36/40 
+  Cleanup    : 32:bind-license-9.9.4-29.el7_2.2.noarch                    37/40 
+  Cleanup    : tzdata-2016a-1.el7.noarch                                  38/40 
+  Cleanup    : 1:openssl-libs-1.0.1e-51.el7_2.2.x86_64                    39/40 
+  Cleanup    : nss-util-3.19.1-4.el7_1.x86_64                             40/40 
+  Verifying  : libssh2-1.4.3-10.el7_2.1.x86_64                             1/40 
+  Verifying  : openssh-server-6.6.1p1-25.el7_2.x86_64                      2/40 
+  Verifying  : openssh-clients-6.6.1p1-25.el7_2.x86_64                     3/40 
+  Verifying  : tzdata-2016c-1.el7.noarch                                   4/40 
+  Verifying  : 1:openssl-1.0.1e-51.el7_2.4.x86_64                          5/40 
+  Verifying  : glusterfs-api-3.7.1-16.0.1.el7.centos.x86_64                6/40 
+  Verifying  : 1:openssl-devel-1.0.1e-51.el7_2.4.x86_64                    7/40 
+  Verifying  : 1:openssl-perl-1.0.1e-51.el7_2.4.x86_64                     8/40 
+  Verifying  : 32:bind-license-9.9.4-29.el7_2.3.noarch                     9/40 
+  Verifying  : 32:bind-utils-9.9.4-29.el7_2.3.x86_64                      10/40 
+  Verifying  : glusterfs-client-xlators-3.7.1-16.0.1.el7.centos.x86_64    11/40 
+  Verifying  : openssh-6.6.1p1-25.el7_2.x86_64                            12/40 
+  Verifying  : perl-Git-1.8.3.1-6.el7_2.1.noarch                          13/40 
+  Verifying  : 32:bind-libs-9.9.4-29.el7_2.3.x86_64                       14/40 
+  Verifying  : nss-util-3.19.1-9.el7_2.x86_64                             15/40 
+  Verifying  : 32:bind-libs-lite-9.9.4-29.el7_2.3.x86_64                  16/40 
+  Verifying  : glusterfs-libs-3.7.1-16.0.1.el7.centos.x86_64              17/40 
+  Verifying  : 1:openssl-libs-1.0.1e-51.el7_2.4.x86_64                    18/40 
+  Verifying  : glusterfs-3.7.1-16.0.1.el7.centos.x86_64                   19/40 
+  Verifying  : git-1.8.3.1-6.el7_2.1.x86_64                               20/40 
+  Verifying  : git-1.8.3.1-6.el7.x86_64                                   21/40 
+  Verifying  : 32:bind-libs-9.9.4-29.el7_2.2.x86_64                       22/40 
+  Verifying  : 1:openssl-devel-1.0.1e-51.el7_2.2.x86_64                   23/40 
+  Verifying  : 32:bind-libs-lite-9.9.4-29.el7_2.2.x86_64                  24/40 
+  Verifying  : libssh2-1.4.3-10.el7.x86_64                                25/40 
+  Verifying  : glusterfs-3.7.1-16.el7.x86_64                              26/40 
+  Verifying  : 1:openssl-1.0.1e-51.el7_2.2.x86_64                         27/40 
+  Verifying  : perl-Git-1.8.3.1-6.el7.noarch                              28/40 
+  Verifying  : tzdata-2016a-1.el7.noarch                                  29/40 
+  Verifying  : glusterfs-client-xlators-3.7.1-16.el7.x86_64               30/40 
+  Verifying  : openssh-clients-6.6.1p1-23.el7_2.x86_64                    31/40 
+  Verifying  : 32:bind-license-9.9.4-29.el7_2.2.noarch                    32/40 
+  Verifying  : openssh-server-6.6.1p1-23.el7_2.x86_64                     33/40 
+  Verifying  : 1:openssl-libs-1.0.1e-51.el7_2.2.x86_64                    34/40 
+  Verifying  : glusterfs-libs-3.7.1-16.el7.x86_64                         35/40 
+  Verifying  : glusterfs-api-3.7.1-16.el7.x86_64                          36/40 
+  Verifying  : 1:openssl-perl-1.0.1e-51.el7_2.2.x86_64                    37/40 
+  Verifying  : openssh-6.6.1p1-23.el7_2.x86_64                            38/40 
+  Verifying  : 32:bind-utils-9.9.4-29.el7_2.2.x86_64                      39/40 
+  Verifying  : nss-util-3.19.1-4.el7_1.x86_64                             40/40 
+
+Updated:
+  bind-libs.x86_64 32:9.9.4-29.el7_2.3                                          
+  bind-libs-lite.x86_64 32:9.9.4-29.el7_2.3                                     
+  bind-license.noarch 32:9.9.4-29.el7_2.3                                       
+  bind-utils.x86_64 32:9.9.4-29.el7_2.3                                         
+  git.x86_64 0:1.8.3.1-6.el7_2.1                                                
+  glusterfs.x86_64 0:3.7.1-16.0.1.el7.centos                                    
+  glusterfs-api.x86_64 0:3.7.1-16.0.1.el7.centos                                
+  glusterfs-client-xlators.x86_64 0:3.7.1-16.0.1.el7.centos                     
+  glusterfs-libs.x86_64 0:3.7.1-16.0.1.el7.centos                               
+  libssh2.x86_64 0:1.4.3-10.el7_2.1                                             
+  nss-util.x86_64 0:3.19.1-9.el7_2                                              
+  openssh.x86_64 0:6.6.1p1-25.el7_2                                             
+  openssh-clients.x86_64 0:6.6.1p1-25.el7_2                                     
+  openssh-server.x86_64 0:6.6.1p1-25.el7_2                                      
+  openssl.x86_64 1:1.0.1e-51.el7_2.4                                            
+  openssl-devel.x86_64 1:1.0.1e-51.el7_2.4                                      
+  openssl-libs.x86_64 1:1.0.1e-51.el7_2.4                                       
+  openssl-perl.x86_64 1:1.0.1e-51.el7_2.4                                       
+  perl-Git.noarch 0:1.8.3.1-6.el7_2.1                                           
+  tzdata.noarch 0:2016c-1.el7                                                   
+
+Complete!
++ yum -y install pciutils
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.chpc.utah.edu
+ * extras: centos.den.host-engine.com
+ * updates: mirror.chpc.utah.edu
+Resolving Dependencies
+--> Running transaction check
+---> Package pciutils.x86_64 0:3.2.1-4.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package            Arch             Version               Repository      Size
+================================================================================
+Installing:
+ pciutils           x86_64           3.2.1-4.el7           base            90 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 90 k
+Installed size: 189 k
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : pciutils-3.2.1-4.el7.x86_64                                  1/1 
+  Verifying  : pciutils-3.2.1-4.el7.x86_64                                  1/1 
+
+Installed:
+  pciutils.x86_64 0:3.2.1-4.el7                                                 
+
+Complete!
++ yum groupinstall -y 'Infiniband Support'
+Loaded plugins: fastestmirror
+There is no installed groups file.
+Maybe run: yum groups mark convert (see man yum)
+Loading mirror speeds from cached hostfile
+ * base: mirror.chpc.utah.edu
+ * extras: centos.den.host-engine.com
+ * updates: mirror.chpc.utah.edu
+Resolving Dependencies
+--> Running transaction check
+---> Package dapl.x86_64 0:2.1.5-1.el7 will be installed
+---> Package glusterfs-rdma.x86_64 0:3.7.1-16.0.1.el7.centos will be installed
+---> Package ibacm.x86_64 0:1.1.0-1.el7 will be installed
+---> Package ibutils.x86_64 0:1.5.7-12.el7 will be installed
+--> Processing Dependency: ibutils-libs = 1.5.7-12.el7 for package: ibutils-1.5.7-12.el7.x86_64
+--> Processing Dependency: swig for package: ibutils-1.5.7-12.el7.x86_64
+--> Processing Dependency: libosmvendor.so.4(OSMVENDOR_2.0)(64bit) for package: ibutils-1.5.7-12.el7.x86_64
+--> Processing Dependency: libosmcomp.so.3(OSMCOMP_2.3)(64bit) for package: ibutils-1.5.7-12.el7.x86_64
+--> Processing Dependency: libopensm.so.5(OPENSM_1.5)(64bit) for package: ibutils-1.5.7-12.el7.x86_64
+--> Processing Dependency: graphviz-tcl for package: ibutils-1.5.7-12.el7.x86_64
+--> Processing Dependency: libosmvendor.so.4()(64bit) for package: ibutils-1.5.7-12.el7.x86_64
+--> Processing Dependency: libosmcomp.so.3()(64bit) for package: ibutils-1.5.7-12.el7.x86_64
+--> Processing Dependency: libopensm.so.5()(64bit) for package: ibutils-1.5.7-12.el7.x86_64
+--> Processing Dependency: libibdmcom.so.1()(64bit) for package: ibutils-1.5.7-12.el7.x86_64
+---> Package libcxgb3.x86_64 0:1.3.1-8.el7 will be installed
+---> Package libcxgb4.x86_64 0:1.3.5-3.el7 will be installed
+---> Package libibcm.x86_64 0:1.0.5-8.el7 will be installed
+---> Package libibmad.x86_64 0:1.3.12-1.el7 will be installed
+---> Package libibumad.x86_64 0:1.3.10.2-1.el7 will be installed
+---> Package libibverbs.x86_64 0:1.1.8-8.el7 will be installed
+---> Package libibverbs-utils.x86_64 0:1.1.8-8.el7 will be installed
+---> Package libipathverbs.x86_64 0:1.3-2.el7 will be installed
+---> Package libmlx4.x86_64 0:1.0.6-5.el7 will be installed
+---> Package libmlx5.x86_64 0:1.0.2-1.el7 will be installed
+---> Package libmthca.x86_64 0:1.0.6-13.el7 will be installed
+---> Package libnes.x86_64 0:1.1.4-2.el7 will be installed
+---> Package librdmacm.x86_64 0:1.0.21-1.el7 will be installed
+---> Package librdmacm-utils.x86_64 0:1.0.21-1.el7 will be installed
+--> Running transaction check
+---> Package graphviz-tcl.x86_64 0:2.30.1-19.el7 will be installed
+--> Processing Dependency: graphviz = 2.30.1-19.el7 for package: graphviz-tcl-2.30.1-19.el7.x86_64
+--> Processing Dependency: libxdot.so.4()(64bit) for package: graphviz-tcl-2.30.1-19.el7.x86_64
+--> Processing Dependency: libpathplan.so.4()(64bit) for package: graphviz-tcl-2.30.1-19.el7.x86_64
+--> Processing Dependency: libpangoft2-1.0.so.0()(64bit) for package: graphviz-tcl-2.30.1-19.el7.x86_64
+--> Processing Dependency: libpangocairo-1.0.so.0()(64bit) for package: graphviz-tcl-2.30.1-19.el7.x86_64
+--> Processing Dependency: libpango-1.0.so.0()(64bit) for package: graphviz-tcl-2.30.1-19.el7.x86_64
+--> Processing Dependency: libltdl.so.7()(64bit) for package: graphviz-tcl-2.30.1-19.el7.x86_64
+--> Processing Dependency: libgvc.so.6()(64bit) for package: graphviz-tcl-2.30.1-19.el7.x86_64
+--> Processing Dependency: libgd.so.2()(64bit) for package: graphviz-tcl-2.30.1-19.el7.x86_64
+--> Processing Dependency: libcgraph.so.6()(64bit) for package: graphviz-tcl-2.30.1-19.el7.x86_64
+--> Processing Dependency: libcdt.so.5()(64bit) for package: graphviz-tcl-2.30.1-19.el7.x86_64
+---> Package ibutils-libs.x86_64 0:1.5.7-12.el7 will be installed
+---> Package opensm-libs.x86_64 0:3.3.19-1.el7 will be installed
+---> Package swig.x86_64 0:2.0.10-4.el7 will be installed
+--> Running transaction check
+---> Package gd.x86_64 0:2.0.35-26.el7 will be installed
+---> Package graphviz.x86_64 0:2.30.1-19.el7 will be installed
+--> Processing Dependency: librsvg-2.so.2()(64bit) for package: graphviz-2.30.1-19.el7.x86_64
+--> Processing Dependency: libgtk-x11-2.0.so.0()(64bit) for package: graphviz-2.30.1-19.el7.x86_64
+--> Processing Dependency: libgdk_pixbuf-2.0.so.0()(64bit) for package: graphviz-2.30.1-19.el7.x86_64
+--> Processing Dependency: libgdk-x11-2.0.so.0()(64bit) for package: graphviz-2.30.1-19.el7.x86_64
+--> Processing Dependency: libatk-1.0.so.0()(64bit) for package: graphviz-2.30.1-19.el7.x86_64
+---> Package libtool-ltdl.x86_64 0:2.4.2-21.el7_2 will be installed
+---> Package pango.x86_64 0:1.36.8-2.el7 will be installed
+--> Processing Dependency: libthai(x86-64) >= 0.1.9 for package: pango-1.36.8-2.el7.x86_64
+--> Processing Dependency: libthai.so.0(LIBTHAI_0.1)(64bit) for package: pango-1.36.8-2.el7.x86_64
+--> Processing Dependency: libthai.so.0()(64bit) for package: pango-1.36.8-2.el7.x86_64
+--> Processing Dependency: libharfbuzz.so.0()(64bit) for package: pango-1.36.8-2.el7.x86_64
+--> Running transaction check
+---> Package atk.x86_64 0:2.14.0-1.el7 will be installed
+---> Package gdk-pixbuf2.x86_64 0:2.31.6-3.el7 will be installed
+--> Processing Dependency: libjasper.so.1()(64bit) for package: gdk-pixbuf2-2.31.6-3.el7.x86_64
+---> Package gtk2.x86_64 0:2.24.28-8.el7 will be installed
+--> Processing Dependency: libXrandr >= 1.2.99.4-2 for package: gtk2-2.24.28-8.el7.x86_64
+--> Processing Dependency: hicolor-icon-theme for package: gtk2-2.24.28-8.el7.x86_64
+--> Processing Dependency: libXrandr.so.2()(64bit) for package: gtk2-2.24.28-8.el7.x86_64
+--> Processing Dependency: libXinerama.so.1()(64bit) for package: gtk2-2.24.28-8.el7.x86_64
+--> Processing Dependency: libXi.so.6()(64bit) for package: gtk2-2.24.28-8.el7.x86_64
+--> Processing Dependency: libXcursor.so.1()(64bit) for package: gtk2-2.24.28-8.el7.x86_64
+--> Processing Dependency: libXcomposite.so.1()(64bit) for package: gtk2-2.24.28-8.el7.x86_64
+---> Package harfbuzz.x86_64 0:0.9.36-1.el7 will be installed
+--> Processing Dependency: libgraphite2.so.3()(64bit) for package: harfbuzz-0.9.36-1.el7.x86_64
+---> Package librsvg2.x86_64 0:2.39.0-1.el7 will be installed
+---> Package libthai.x86_64 0:0.1.14-9.el7 will be installed
+--> Running transaction check
+---> Package graphite2.x86_64 0:1.2.2-5.el7 will be installed
+---> Package hicolor-icon-theme.noarch 0:0.12-7.el7 will be installed
+---> Package jasper-libs.x86_64 0:1.900.1-29.el7 will be installed
+---> Package libXcomposite.x86_64 0:0.4.4-4.1.el7 will be installed
+---> Package libXcursor.x86_64 0:1.1.14-2.1.el7 will be installed
+---> Package libXi.x86_64 0:1.7.4-2.el7 will be installed
+---> Package libXinerama.x86_64 0:1.1.3-2.1.el7 will be installed
+---> Package libXrandr.x86_64 0:1.4.2-2.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package               Arch      Version                       Repository  Size
+================================================================================
+Installing for group install "Infiniband Support":
+ dapl                  x86_64    2.1.5-1.el7                   base       222 k
+ ibacm                 x86_64    1.1.0-1.el7                   base        80 k
+ ibutils               x86_64    1.5.7-12.el7                  base       1.1 M
+ libcxgb3              x86_64    1.3.1-8.el7                   base        19 k
+ libcxgb4              x86_64    1.3.5-3.el7                   base        21 k
+ libibcm               x86_64    1.0.5-8.el7                   base        21 k
+ libibmad              x86_64    1.3.12-1.el7                  base        64 k
+ libibumad             x86_64    1.3.10.2-1.el7                base        66 k
+ libibverbs            x86_64    1.1.8-8.el7                   base        56 k
+ libibverbs-utils      x86_64    1.1.8-8.el7                   base        52 k
+ libipathverbs         x86_64    1.3-2.el7                     base        19 k
+ libmlx4               x86_64    1.0.6-5.el7                   base        33 k
+ libmlx5               x86_64    1.0.2-1.el7                   base        34 k
+ libmthca              x86_64    1.0.6-13.el7                  base        37 k
+ libnes                x86_64    1.1.4-2.el7                   base        18 k
+ librdmacm             x86_64    1.0.21-1.el7                  base        64 k
+ librdmacm-utils       x86_64    1.0.21-1.el7                  base        79 k
+Installing:
+ glusterfs-rdma        x86_64    3.7.1-16.0.1.el7.centos       updates     41 k
+Installing for dependencies:
+ atk                   x86_64    2.14.0-1.el7                  base       251 k
+ gd                    x86_64    2.0.35-26.el7                 base       146 k
+ gdk-pixbuf2           x86_64    2.31.6-3.el7                  base       559 k
+ graphite2             x86_64    1.2.2-5.el7                   base        81 k
+ graphviz              x86_64    2.30.1-19.el7                 base       1.3 M
+ graphviz-tcl          x86_64    2.30.1-19.el7                 base       705 k
+ gtk2                  x86_64    2.24.28-8.el7                 base       3.4 M
+ harfbuzz              x86_64    0.9.36-1.el7                  base       156 k
+ hicolor-icon-theme    noarch    0.12-7.el7                    base        42 k
+ ibutils-libs          x86_64    1.5.7-12.el7                  base       689 k
+ jasper-libs           x86_64    1.900.1-29.el7                base       149 k
+ libXcomposite         x86_64    0.4.4-4.1.el7                 base        22 k
+ libXcursor            x86_64    1.1.14-2.1.el7                base        30 k
+ libXi                 x86_64    1.7.4-2.el7                   base        40 k
+ libXinerama           x86_64    1.1.3-2.1.el7                 base        14 k
+ libXrandr             x86_64    1.4.2-2.el7                   base        26 k
+ librsvg2              x86_64    2.39.0-1.el7                  base       123 k
+ libthai               x86_64    0.1.14-9.el7                  base       187 k
+ libtool-ltdl          x86_64    2.4.2-21.el7_2                updates     49 k
+ opensm-libs           x86_64    3.3.19-1.el7                  base        65 k
+ pango                 x86_64    1.36.8-2.el7                  base       287 k
+ swig                  x86_64    2.0.10-4.el7                  base       1.3 M
+
+Transaction Summary
+================================================================================
+Install  18 Packages (+22 Dependent packages)
+
+Total download size: 11 M
+Installed size: 46 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                               16 MB/s |  11 MB  00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libibverbs-1.1.8-8.el7.x86_64                               1/40 
+  Installing : libibumad-1.3.10.2-1.el7.x86_64                             2/40 
+  Installing : librdmacm-1.0.21-1.el7.x86_64                               3/40 
+  Installing : opensm-libs-3.3.19-1.el7.x86_64                             4/40 
+  Installing : gd-2.0.35-26.el7.x86_64                                     5/40 
+  Installing : libtool-ltdl-2.4.2-21.el7_2.x86_64                          6/40 
+  Installing : atk-2.14.0-1.el7.x86_64                                     7/40 
+  Installing : ibutils-libs-1.5.7-12.el7.x86_64                            8/40 
+  Installing : libcxgb4-1.3.5-3.el7.x86_64                                 9/40 
+  Installing : libthai-0.1.14-9.el7.x86_64                                10/40 
+  Installing : swig-2.0.10-4.el7.x86_64                                   11/40 
+  Installing : libXi-1.7.4-2.el7.x86_64                                   12/40 
+  Installing : libXcursor-1.1.14-2.1.el7.x86_64                           13/40 
+  Installing : jasper-libs-1.900.1-29.el7.x86_64                          14/40 
+  Installing : gdk-pixbuf2-2.31.6-3.el7.x86_64                            15/40 
+  Installing : graphite2-1.2.2-5.el7.x86_64                               16/40 
+  Installing : harfbuzz-0.9.36-1.el7.x86_64                               17/40 
+  Installing : pango-1.36.8-2.el7.x86_64                                  18/40 
+  Installing : librsvg2-2.39.0-1.el7.x86_64                               19/40 
+  Installing : libXcomposite-0.4.4-4.1.el7.x86_64                         20/40 
+  Installing : libXrandr-1.4.2-2.el7.x86_64                               21/40 
+  Installing : hicolor-icon-theme-0.12-7.el7.noarch                       22/40 
+  Installing : libXinerama-1.1.3-2.1.el7.x86_64                           23/40 
+  Installing : gtk2-2.24.28-8.el7.x86_64                                  24/40 
+  Installing : graphviz-2.30.1-19.el7.x86_64                              25/40 
+  Installing : graphviz-tcl-2.30.1-19.el7.x86_64                          26/40 
+  Installing : ibutils-1.5.7-12.el7.x86_64                                27/40 
+  Installing : libibverbs-utils-1.1.8-8.el7.x86_64                        28/40 
+  Installing : dapl-2.1.5-1.el7.x86_64                                    29/40 
+  Installing : glusterfs-rdma-3.7.1-16.0.1.el7.centos.x86_64              30/40 
+  Installing : librdmacm-utils-1.0.21-1.el7.x86_64                        31/40 
+  Installing : libibmad-1.3.12-1.el7.x86_64                               32/40 
+  Installing : ibacm-1.1.0-1.el7.x86_64                                   33/40 
+  Installing : libcxgb3-1.3.1-8.el7.x86_64                                34/40 
+  Installing : libipathverbs-1.3-2.el7.x86_64                             35/40 
+  Installing : libnes-1.1.4-2.el7.x86_64                                  36/40 
+  Installing : libmlx5-1.0.2-1.el7.x86_64                                 37/40 
+  Installing : libibcm-1.0.5-8.el7.x86_64                                 38/40 
+  Installing : libmthca-1.0.6-13.el7.x86_64                               39/40 
+  Installing : libmlx4-1.0.6-5.el7.x86_64                                 40/40 
+  Verifying  : graphviz-2.30.1-19.el7.x86_64                               1/40 
+  Verifying  : libXinerama-1.1.3-2.1.el7.x86_64                            2/40 
+  Verifying  : ibutils-libs-1.5.7-12.el7.x86_64                            3/40 
+  Verifying  : librsvg2-2.39.0-1.el7.x86_64                                4/40 
+  Verifying  : libibmad-1.3.12-1.el7.x86_64                                5/40 
+  Verifying  : librdmacm-1.0.21-1.el7.x86_64                               6/40 
+  Verifying  : gdk-pixbuf2-2.31.6-3.el7.x86_64                             7/40 
+  Verifying  : hicolor-icon-theme-0.12-7.el7.noarch                        8/40 
+  Verifying  : ibutils-1.5.7-12.el7.x86_64                                 9/40 
+  Verifying  : libcxgb4-1.3.5-3.el7.x86_64                                10/40 
+  Verifying  : libXrandr-1.4.2-2.el7.x86_64                               11/40 
+  Verifying  : libibumad-1.3.10.2-1.el7.x86_64                            12/40 
+  Verifying  : libXcomposite-0.4.4-4.1.el7.x86_64                         13/40 
+  Verifying  : atk-2.14.0-1.el7.x86_64                                    14/40 
+  Verifying  : graphite2-1.2.2-5.el7.x86_64                               15/40 
+  Verifying  : libcxgb3-1.3.1-8.el7.x86_64                                16/40 
+  Verifying  : harfbuzz-0.9.36-1.el7.x86_64                               17/40 
+  Verifying  : libipathverbs-1.3-2.el7.x86_64                             18/40 
+  Verifying  : dapl-2.1.5-1.el7.x86_64                                    19/40 
+  Verifying  : libtool-ltdl-2.4.2-21.el7_2.x86_64                         20/40 
+  Verifying  : libnes-1.1.4-2.el7.x86_64                                  21/40 
+  Verifying  : pango-1.36.8-2.el7.x86_64                                  22/40 
+  Verifying  : opensm-libs-3.3.19-1.el7.x86_64                            23/40 
+  Verifying  : glusterfs-rdma-3.7.1-16.0.1.el7.centos.x86_64              24/40 
+  Verifying  : jasper-libs-1.900.1-29.el7.x86_64                          25/40 
+  Verifying  : gtk2-2.24.28-8.el7.x86_64                                  26/40 
+  Verifying  : graphviz-tcl-2.30.1-19.el7.x86_64                          27/40 
+  Verifying  : libmlx5-1.0.2-1.el7.x86_64                                 28/40 
+  Verifying  : libibcm-1.0.5-8.el7.x86_64                                 29/40 
+  Verifying  : libXcursor-1.1.14-2.1.el7.x86_64                           30/40 
+  Verifying  : gd-2.0.35-26.el7.x86_64                                    31/40 
+  Verifying  : librdmacm-utils-1.0.21-1.el7.x86_64                        32/40 
+  Verifying  : libmthca-1.0.6-13.el7.x86_64                               33/40 
+  Verifying  : libibverbs-1.1.8-8.el7.x86_64                              34/40 
+  Verifying  : libmlx4-1.0.6-5.el7.x86_64                                 35/40 
+  Verifying  : libibverbs-utils-1.1.8-8.el7.x86_64                        36/40 
+  Verifying  : libXi-1.7.4-2.el7.x86_64                                   37/40 
+  Verifying  : swig-2.0.10-4.el7.x86_64                                   38/40 
+  Verifying  : ibacm-1.1.0-1.el7.x86_64                                   39/40 
+  Verifying  : libthai-0.1.14-9.el7.x86_64                                40/40 
+
+Installed:
+  dapl.x86_64 0:2.1.5-1.el7                                                     
+  glusterfs-rdma.x86_64 0:3.7.1-16.0.1.el7.centos                               
+  ibacm.x86_64 0:1.1.0-1.el7                                                    
+  ibutils.x86_64 0:1.5.7-12.el7                                                 
+  libcxgb3.x86_64 0:1.3.1-8.el7                                                 
+  libcxgb4.x86_64 0:1.3.5-3.el7                                                 
+  libibcm.x86_64 0:1.0.5-8.el7                                                  
+  libibmad.x86_64 0:1.3.12-1.el7                                                
+  libibumad.x86_64 0:1.3.10.2-1.el7                                             
+  libibverbs.x86_64 0:1.1.8-8.el7                                               
+  libibverbs-utils.x86_64 0:1.1.8-8.el7                                         
+  libipathverbs.x86_64 0:1.3-2.el7                                              
+  libmlx4.x86_64 0:1.0.6-5.el7                                                  
+  libmlx5.x86_64 0:1.0.2-1.el7                                                  
+  libmthca.x86_64 0:1.0.6-13.el7                                                
+  libnes.x86_64 0:1.1.4-2.el7                                                   
+  librdmacm.x86_64 0:1.0.21-1.el7                                               
+  librdmacm-utils.x86_64 0:1.0.21-1.el7                                         
+
+Dependency Installed:
+  atk.x86_64 0:2.14.0-1.el7               gd.x86_64 0:2.0.35-26.el7            
+  gdk-pixbuf2.x86_64 0:2.31.6-3.el7       graphite2.x86_64 0:1.2.2-5.el7       
+  graphviz.x86_64 0:2.30.1-19.el7         graphviz-tcl.x86_64 0:2.30.1-19.el7  
+  gtk2.x86_64 0:2.24.28-8.el7             harfbuzz.x86_64 0:0.9.36-1.el7       
+  hicolor-icon-theme.noarch 0:0.12-7.el7  ibutils-libs.x86_64 0:1.5.7-12.el7   
+  jasper-libs.x86_64 0:1.900.1-29.el7     libXcomposite.x86_64 0:0.4.4-4.1.el7 
+  libXcursor.x86_64 0:1.1.14-2.1.el7      libXi.x86_64 0:1.7.4-2.el7           
+  libXinerama.x86_64 0:1.1.3-2.1.el7      libXrandr.x86_64 0:1.4.2-2.el7       
+  librsvg2.x86_64 0:2.39.0-1.el7          libthai.x86_64 0:0.1.14-9.el7        
+  libtool-ltdl.x86_64 0:2.4.2-21.el7_2    opensm-libs.x86_64 0:3.3.19-1.el7    
+  pango.x86_64 0:1.36.8-2.el7             swig.x86_64 0:2.0.10-4.el7           
+
+Complete!
++ yum install -y infiniband-diags perftest libibverbs-utils librdmacm-utils libipathverbs libmlx4
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.chpc.utah.edu
+ * extras: centos.den.host-engine.com
+ * updates: mirror.chpc.utah.edu
+Package libibverbs-utils-1.1.8-8.el7.x86_64 already installed and latest version
+Package librdmacm-utils-1.0.21-1.el7.x86_64 already installed and latest version
+Package libipathverbs-1.3-2.el7.x86_64 already installed and latest version
+Package libmlx4-1.0.6-5.el7.x86_64 already installed and latest version
+Resolving Dependencies
+--> Running transaction check
+---> Package infiniband-diags.x86_64 0:1.6.5-3.el7 will be installed
+---> Package perftest.x86_64 0:2.4-1.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                  Arch           Version             Repository    Size
+================================================================================
+Installing:
+ infiniband-diags         x86_64         1.6.5-3.el7         base         315 k
+ perftest                 x86_64         2.4-1.el7           base         132 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages
+
+Total download size: 447 k
+Installed size: 2.0 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              5.0 MB/s | 447 kB  00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : infiniband-diags-1.6.5-3.el7.x86_64                          1/2 
+  Installing : perftest-2.4-1.el7.x86_64                                    2/2 
+  Verifying  : perftest-2.4-1.el7.x86_64                                    1/2 
+  Verifying  : infiniband-diags-1.6.5-3.el7.x86_64                          2/2 
+
+Installed:
+  infiniband-diags.x86_64 0:1.6.5-3.el7       perftest.x86_64 0:2.4-1.el7      
+
+Complete!
++ yum install -y librdmacm-devel libibverbs-devel numactl numactl-devel libaio-devel libevent-devel
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.chpc.utah.edu
+ * extras: centos.den.host-engine.com
+ * updates: mirror.chpc.utah.edu
+Resolving Dependencies
+--> Running transaction check
+---> Package libaio-devel.x86_64 0:0.3.109-13.el7 will be installed
+---> Package libevent-devel.x86_64 0:2.0.21-4.el7 will be installed
+---> Package libibverbs-devel.x86_64 0:1.1.8-8.el7 will be installed
+---> Package librdmacm-devel.x86_64 0:1.0.21-1.el7 will be installed
+---> Package numactl.x86_64 0:2.0.9-6.el7_2 will be installed
+---> Package numactl-devel.x86_64 0:2.0.9-6.el7_2 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch         Version                Repository     Size
+================================================================================
+Installing:
+ libaio-devel           x86_64       0.3.109-13.el7         base           13 k
+ libevent-devel         x86_64       2.0.21-4.el7           base           85 k
+ libibverbs-devel       x86_64       1.1.8-8.el7            base           71 k
+ librdmacm-devel        x86_64       1.0.21-1.el7           base           68 k
+ numactl                x86_64       2.0.9-6.el7_2          updates        65 k
+ numactl-devel          x86_64       2.0.9-6.el7_2          updates        23 k
+
+Transaction Summary
+================================================================================
+Install  6 Packages
+
+Total download size: 325 k
+Installed size: 741 k
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              2.1 MB/s | 325 kB  00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libibverbs-devel-1.1.8-8.el7.x86_64                          1/6 
+  Installing : librdmacm-devel-1.0.21-1.el7.x86_64                          2/6 
+  Installing : numactl-2.0.9-6.el7_2.x86_64                                 3/6 
+  Installing : libaio-devel-0.3.109-13.el7.x86_64                           4/6 
+  Installing : libevent-devel-2.0.21-4.el7.x86_64                           5/6 
+  Installing : numactl-devel-2.0.9-6.el7_2.x86_64                           6/6 
+  Verifying  : numactl-devel-2.0.9-6.el7_2.x86_64                           1/6 
+  Verifying  : libibverbs-devel-1.1.8-8.el7.x86_64                          2/6 
+  Verifying  : libevent-devel-2.0.21-4.el7.x86_64                           3/6 
+  Verifying  : libaio-devel-0.3.109-13.el7.x86_64                           4/6 
+  Verifying  : librdmacm-devel-1.0.21-1.el7.x86_64                          5/6 
+  Verifying  : numactl-2.0.9-6.el7_2.x86_64                                 6/6 
+
+Installed:
+  libaio-devel.x86_64 0:0.3.109-13.el7   libevent-devel.x86_64 0:2.0.21-4.el7  
+  libibverbs-devel.x86_64 0:1.1.8-8.el7  librdmacm-devel.x86_64 0:1.0.21-1.el7 
+  numactl.x86_64 0:2.0.9-6.el7_2         numactl-devel.x86_64 0:2.0.9-6.el7_2  
+
+Complete!
++ cat
++ tee /etc/security/limits.d/90-rmda.conf
++ echo ssh
++ tee /etc/pdsh/rcmd_default
+tee: /etc/pdsh/rcmd_default: No such file or directory
+ssh
++ sed -i 's/HostbasedAuthentication no/HostbasedAuthentication yes/' /etc/ssh/sshd_config
++ cat
++ tee -a /etc/ssh/ssh_config
+    HostbasedAuthentication yes
+    EnableSSHKeysign yes
++ cat
++ tee /etc/ssh/shosts.equiv
+++ for each in '$HOSTS' localhost
+++ grep localhost /etc/hosts
+++ awk '{print $1}'
+++ for each in '$HOSTS' localhost
+++ echo localhost
++ for each in '$HOSTS' localhost
+++ grep localhost /etc/hosts
+++ awk '{print $2}'
++ ssh-keyscan localhost
+# localhost SSH-2.0-OpenSSH_6.6.1
+# localhost SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ for each in '$HOSTS' localhost
+++ grep localhost /etc/hosts
+++ awk '{print $1}'
++ ssh-keyscan 127.0.0.1
+# 127.0.0.1 SSH-2.0-OpenSSH_6.6.1
+# 127.0.0.1 SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ service ssh restart
+Redirecting to /bin/systemctl restart  ssh.service
+Failed to restart ssh.service: Unit ssh.service failed to load: No such file or directory.
++ rm -f /opt/.setup_in_process

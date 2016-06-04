@@ -1,0 +1,756 @@
++ FLAG=/opt/.usersetup
++ SETUPFLAG=/opt/.setup_in_process
++ '[' '!' -f /opt/.setup_in_process ']'
++ touch /opt/.setup_in_process
++ touch /opt/.usersetup
+++ cat /etc/hosts
+++ grep cp-
+++ awk '{print $4}'
+++ sort
++ HOSTS='cp-1
+cp-2'
++ let i=0
++ for each in '$HOSTS'
++ ((  i += 1  ))
++ for each in '$HOSTS'
++ ((  i += 1  ))
++ cat
++ tee /etc/profile.d/firstboot.sh
++ chmod +x /etc/profile.d/firstboot.sh
++ cp /tmp/setup/phase2-setup.sh /usr/local/bin/phase2-setup.sh
++ cp /tmp/setup/pmem-setup.sh /usr/local/bin/pmem-setup.sh
++ cp /tmp/setup/accelio-setup.sh /usr/local/bin/accelio-setup.sh
++ cp /tmp/setup/grappa-setup.sh /usr/local/bin/grappa-setup.sh
++ chmod +x /usr/local/bin/phase2-setup.sh
++ chmod +x /usr/local/bin/pmem-setup.sh
++ chmod +x /usr/local/bin/accelio-setup.sh
++ chmod +x /usr/local/bin/grappa-setup.sh
+++ lsblk -o NAME,MODEL
+++ grep SSD
+++ awk 'NR==1{print $1}'
++ SSD=
++ '[' -n '' ']'
++ unset SSD
+++ cat /etc/redhat-release
++ [[ CentOS Linux release 7.2.1511 (Core)  =~ CentOS.* ]]
++ yum -y update
+Loaded plugins: fastestmirror
+Repodata is over 2 weeks old. Install yum-cron? Or run: yum makecache fast
+Determining fastest mirrors
+ * base: mirrors.xmission.com
+ * extras: mirror.scalabledns.com
+ * updates: mirrors.xmission.com
+Resolving Dependencies
+--> Running transaction check
+---> Package NetworkManager-libnm.x86_64 1:1.0.6-27.el7 will be updated
+---> Package NetworkManager-libnm.x86_64 1:1.0.6-29.el7_2 will be an update
+---> Package chkconfig.x86_64 0:1.3.61-5.el7 will be updated
+---> Package chkconfig.x86_64 0:1.3.61-5.el7_2.1 will be an update
+---> Package cronie.x86_64 0:1.4.11-14.el7 will be updated
+---> Package cronie.x86_64 0:1.4.11-14.el7_2.1 will be an update
+---> Package cronie-anacron.x86_64 0:1.4.11-14.el7 will be updated
+---> Package cronie-anacron.x86_64 0:1.4.11-14.el7_2.1 will be an update
+---> Package device-mapper.x86_64 7:1.02.107-5.el7_2.1 will be updated
+---> Package device-mapper.x86_64 7:1.02.107-5.el7_2.2 will be an update
+---> Package device-mapper-event.x86_64 7:1.02.107-5.el7_2.1 will be updated
+---> Package device-mapper-event.x86_64 7:1.02.107-5.el7_2.2 will be an update
+---> Package device-mapper-event-libs.x86_64 7:1.02.107-5.el7_2.1 will be updated
+---> Package device-mapper-event-libs.x86_64 7:1.02.107-5.el7_2.2 will be an update
+---> Package device-mapper-libs.x86_64 7:1.02.107-5.el7_2.1 will be updated
+---> Package device-mapper-libs.x86_64 7:1.02.107-5.el7_2.2 will be an update
+---> Package glibc.x86_64 0:2.17-106.el7_2.4 will be updated
+---> Package glibc.x86_64 0:2.17-106.el7_2.6 will be an update
+---> Package glibc-common.x86_64 0:2.17-106.el7_2.4 will be updated
+---> Package glibc-common.x86_64 0:2.17-106.el7_2.6 will be an update
+---> Package glibc-devel.x86_64 0:2.17-106.el7_2.4 will be updated
+---> Package glibc-devel.x86_64 0:2.17-106.el7_2.6 will be an update
+---> Package glibc-headers.x86_64 0:2.17-106.el7_2.4 will be updated
+---> Package glibc-headers.x86_64 0:2.17-106.el7_2.6 will be an update
+---> Package graphite2.x86_64 0:1.2.2-5.el7 will be updated
+---> Package graphite2.x86_64 0:1.3.6-1.el7_2 will be an update
+---> Package initscripts.x86_64 0:9.49.30-1.el7 will be updated
+---> Package initscripts.x86_64 0:9.49.30-1.el7_2.2 will be an update
+---> Package kernel.x86_64 0:3.10.0-327.18.2.el7 will be installed
+---> Package kernel-devel.x86_64 0:3.10.0-327.18.2.el7 will be installed
+---> Package kernel-headers.x86_64 0:3.10.0-327.10.1.el7 will be updated
+---> Package kernel-headers.x86_64 0:3.10.0-327.18.2.el7 will be an update
+---> Package kernel-tools.x86_64 0:3.10.0-327.10.1.el7 will be updated
+---> Package kernel-tools.x86_64 0:3.10.0-327.18.2.el7 will be an update
+---> Package kernel-tools-libs.x86_64 0:3.10.0-327.10.1.el7 will be updated
+---> Package kernel-tools-libs.x86_64 0:3.10.0-327.18.2.el7 will be an update
+---> Package kpartx.x86_64 0:0.4.9-85.el7 will be updated
+---> Package kpartx.x86_64 0:0.4.9-85.el7_2.4 will be an update
+---> Package krb5-devel.x86_64 0:1.13.2-10.el7 will be updated
+---> Package krb5-devel.x86_64 0:1.13.2-12.el7_2 will be an update
+---> Package krb5-libs.x86_64 0:1.13.2-10.el7 will be updated
+---> Package krb5-libs.x86_64 0:1.13.2-12.el7_2 will be an update
+---> Package libblkid.x86_64 0:2.23.2-26.el7 will be updated
+---> Package libblkid.x86_64 0:2.23.2-26.el7_2.2 will be an update
+---> Package libgudev1.x86_64 0:219-19.el7_2.4 will be updated
+---> Package libgudev1.x86_64 0:219-19.el7_2.9 will be an update
+---> Package libmount.x86_64 0:2.23.2-26.el7 will be updated
+---> Package libmount.x86_64 0:2.23.2-26.el7_2.2 will be an update
+---> Package libndp.x86_64 0:1.2-4.el7 will be updated
+---> Package libndp.x86_64 0:1.2-6.el7_2 will be an update
+---> Package libtalloc.x86_64 0:2.1.2-1.el7 will be updated
+---> Package libtalloc.x86_64 0:2.1.5-1.el7_2 will be an update
+---> Package libteam.x86_64 0:1.17-5.el7 will be updated
+---> Package libteam.x86_64 0:1.17-6.el7_2 will be an update
+---> Package libtevent.x86_64 0:0.9.25-1.el7 will be updated
+---> Package libtevent.x86_64 0:0.9.26-1.el7_2.1 will be an update
+---> Package libuuid.x86_64 0:2.23.2-26.el7 will be updated
+---> Package libuuid.x86_64 0:2.23.2-26.el7_2.2 will be an update
+---> Package libvirt-client.x86_64 0:1.2.17-13.el7_2.3 will be updated
+---> Package libvirt-client.x86_64 0:1.2.17-13.el7_2.4 will be an update
+---> Package libvirt-daemon.x86_64 0:1.2.17-13.el7_2.3 will be updated
+---> Package libvirt-daemon.x86_64 0:1.2.17-13.el7_2.4 will be an update
+---> Package libvirt-daemon-config-nwfilter.x86_64 0:1.2.17-13.el7_2.3 will be updated
+---> Package libvirt-daemon-config-nwfilter.x86_64 0:1.2.17-13.el7_2.4 will be an update
+---> Package libvirt-daemon-driver-interface.x86_64 0:1.2.17-13.el7_2.3 will be updated
+---> Package libvirt-daemon-driver-interface.x86_64 0:1.2.17-13.el7_2.4 will be an update
+---> Package libvirt-daemon-driver-nodedev.x86_64 0:1.2.17-13.el7_2.3 will be updated
+---> Package libvirt-daemon-driver-nodedev.x86_64 0:1.2.17-13.el7_2.4 will be an update
+---> Package libvirt-daemon-driver-nwfilter.x86_64 0:1.2.17-13.el7_2.3 will be updated
+---> Package libvirt-daemon-driver-nwfilter.x86_64 0:1.2.17-13.el7_2.4 will be an update
+---> Package libvirt-daemon-driver-secret.x86_64 0:1.2.17-13.el7_2.3 will be updated
+---> Package libvirt-daemon-driver-secret.x86_64 0:1.2.17-13.el7_2.4 will be an update
+---> Package libvirt-daemon-driver-storage.x86_64 0:1.2.17-13.el7_2.3 will be updated
+---> Package libvirt-daemon-driver-storage.x86_64 0:1.2.17-13.el7_2.4 will be an update
+---> Package lvm2.x86_64 7:2.02.130-5.el7_2.1 will be updated
+---> Package lvm2.x86_64 7:2.02.130-5.el7_2.2 will be an update
+---> Package lvm2-libs.x86_64 7:2.02.130-5.el7_2.1 will be updated
+---> Package lvm2-libs.x86_64 7:2.02.130-5.el7_2.2 will be an update
+---> Package mariadb-devel.x86_64 1:5.5.44-2.el7.centos will be updated
+---> Package mariadb-devel.x86_64 1:5.5.47-1.el7_2 will be an update
+---> Package mariadb-libs.x86_64 1:5.5.44-2.el7.centos will be updated
+---> Package mariadb-libs.x86_64 1:5.5.47-1.el7_2 will be an update
+---> Package nspr.x86_64 0:4.10.8-2.el7_1 will be updated
+---> Package nspr.x86_64 0:4.11.0-1.el7_2 will be an update
+---> Package nss.x86_64 0:3.19.1-19.el7_2 will be updated
+---> Package nss.x86_64 0:3.21.0-9.el7_2 will be an update
+---> Package nss-softokn.x86_64 0:3.16.2.3-13.el7_1 will be updated
+---> Package nss-softokn.x86_64 0:3.16.2.3-14.2.el7_2 will be an update
+---> Package nss-softokn-freebl.x86_64 0:3.16.2.3-13.el7_1 will be updated
+---> Package nss-softokn-freebl.x86_64 0:3.16.2.3-14.2.el7_2 will be an update
+---> Package nss-sysinit.x86_64 0:3.19.1-19.el7_2 will be updated
+---> Package nss-sysinit.x86_64 0:3.21.0-9.el7_2 will be an update
+---> Package nss-tools.x86_64 0:3.19.1-19.el7_2 will be updated
+---> Package nss-tools.x86_64 0:3.21.0-9.el7_2 will be an update
+---> Package nss-util.x86_64 0:3.19.1-9.el7_2 will be updated
+---> Package nss-util.x86_64 0:3.21.0-2.2.el7_2 will be an update
+---> Package openldap.x86_64 0:2.4.40-8.el7 will be updated
+---> Package openldap.x86_64 0:2.4.40-9.el7_2 will be an update
+---> Package openssl.x86_64 1:1.0.1e-51.el7_2.4 will be updated
+---> Package openssl.x86_64 1:1.0.1e-51.el7_2.5 will be an update
+---> Package openssl-devel.x86_64 1:1.0.1e-51.el7_2.4 will be updated
+---> Package openssl-devel.x86_64 1:1.0.1e-51.el7_2.5 will be an update
+---> Package openssl-libs.x86_64 1:1.0.1e-51.el7_2.4 will be updated
+---> Package openssl-libs.x86_64 1:1.0.1e-51.el7_2.5 will be an update
+---> Package openssl-perl.x86_64 1:1.0.1e-51.el7_2.4 will be updated
+---> Package openssl-perl.x86_64 1:1.0.1e-51.el7_2.5 will be an update
+---> Package pcre.x86_64 0:8.32-15.el7 will be updated
+---> Package pcre.x86_64 0:8.32-15.el7_2.1 will be an update
+---> Package pcre-devel.x86_64 0:8.32-15.el7 will be updated
+---> Package pcre-devel.x86_64 0:8.32-15.el7_2.1 will be an update
+---> Package python-perf.x86_64 0:3.10.0-327.10.1.el7 will be updated
+---> Package python-perf.x86_64 0:3.10.0-327.18.2.el7 will be an update
+---> Package qemu-img.x86_64 10:1.5.3-105.el7_2.3 will be updated
+---> Package qemu-img.x86_64 10:1.5.3-105.el7_2.4 will be an update
+---> Package quota.x86_64 1:4.01-11.el7 will be updated
+---> Package quota.x86_64 1:4.01-11.el7_2.1 will be an update
+---> Package quota-nls.noarch 1:4.01-11.el7 will be updated
+---> Package quota-nls.noarch 1:4.01-11.el7_2.1 will be an update
+---> Package sudo.x86_64 0:1.8.6p7-16.el7 will be updated
+---> Package sudo.x86_64 0:1.8.6p7-17.el7_2 will be an update
+---> Package systemd.x86_64 0:219-19.el7_2.4 will be updated
+---> Package systemd.x86_64 0:219-19.el7_2.9 will be an update
+---> Package systemd-libs.x86_64 0:219-19.el7_2.4 will be updated
+---> Package systemd-libs.x86_64 0:219-19.el7_2.9 will be an update
+---> Package systemd-sysv.x86_64 0:219-19.el7_2.4 will be updated
+---> Package systemd-sysv.x86_64 0:219-19.el7_2.9 will be an update
+---> Package teamd.x86_64 0:1.17-5.el7 will be updated
+---> Package teamd.x86_64 0:1.17-6.el7_2 will be an update
+---> Package tuned.noarch 0:2.5.1-4.el7_2.2 will be updated
+---> Package tuned.noarch 0:2.5.1-4.el7_2.3 will be an update
+---> Package tzdata.noarch 0:2016c-1.el7 will be updated
+---> Package tzdata.noarch 0:2016d-1.el7 will be an update
+---> Package util-linux.x86_64 0:2.23.2-26.el7 will be updated
+---> Package util-linux.x86_64 0:2.23.2-26.el7_2.2 will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                          Arch    Version                Repository
+                                                                           Size
+================================================================================
+Installing:
+ kernel                           x86_64  3.10.0-327.18.2.el7    updates   33 M
+ kernel-devel                     x86_64  3.10.0-327.18.2.el7    updates   11 M
+Updating:
+ NetworkManager-libnm             x86_64  1:1.0.6-29.el7_2       updates  498 k
+ chkconfig                        x86_64  1.3.61-5.el7_2.1       updates  173 k
+ cronie                           x86_64  1.4.11-14.el7_2.1      updates   90 k
+ cronie-anacron                   x86_64  1.4.11-14.el7_2.1      updates   35 k
+ device-mapper                    x86_64  7:1.02.107-5.el7_2.2   updates  252 k
+ device-mapper-event              x86_64  7:1.02.107-5.el7_2.2   updates  167 k
+ device-mapper-event-libs         x86_64  7:1.02.107-5.el7_2.2   updates  169 k
+ device-mapper-libs               x86_64  7:1.02.107-5.el7_2.2   updates  305 k
+ glibc                            x86_64  2.17-106.el7_2.6       updates  3.6 M
+ glibc-common                     x86_64  2.17-106.el7_2.6       updates   11 M
+ glibc-devel                      x86_64  2.17-106.el7_2.6       updates  1.0 M
+ glibc-headers                    x86_64  2.17-106.el7_2.6       updates  662 k
+ graphite2                        x86_64  1.3.6-1.el7_2          updates  112 k
+ initscripts                      x86_64  9.49.30-1.el7_2.2      updates  429 k
+ kernel-headers                   x86_64  3.10.0-327.18.2.el7    updates  3.2 M
+ kernel-tools                     x86_64  3.10.0-327.18.2.el7    updates  2.4 M
+ kernel-tools-libs                x86_64  3.10.0-327.18.2.el7    updates  2.3 M
+ kpartx                           x86_64  0.4.9-85.el7_2.4       updates   60 k
+ krb5-devel                       x86_64  1.13.2-12.el7_2        updates  649 k
+ krb5-libs                        x86_64  1.13.2-12.el7_2        updates  843 k
+ libblkid                         x86_64  2.23.2-26.el7_2.2      updates  166 k
+ libgudev1                        x86_64  219-19.el7_2.9         updates   66 k
+ libmount                         x86_64  2.23.2-26.el7_2.2      updates  169 k
+ libndp                           x86_64  1.2-6.el7_2            updates   31 k
+ libtalloc                        x86_64  2.1.5-1.el7_2          updates   34 k
+ libteam                          x86_64  1.17-6.el7_2           updates   45 k
+ libtevent                        x86_64  0.9.26-1.el7_2.1       updates   33 k
+ libuuid                          x86_64  2.23.2-26.el7_2.2      updates   74 k
+ libvirt-client                   x86_64  1.2.17-13.el7_2.4      updates  4.3 M
+ libvirt-daemon                   x86_64  1.2.17-13.el7_2.4      updates  585 k
+ libvirt-daemon-config-nwfilter   x86_64  1.2.17-13.el7_2.4      updates  122 k
+ libvirt-daemon-driver-interface  x86_64  1.2.17-13.el7_2.4      updates  162 k
+ libvirt-daemon-driver-nodedev    x86_64  1.2.17-13.el7_2.4      updates  161 k
+ libvirt-daemon-driver-nwfilter   x86_64  1.2.17-13.el7_2.4      updates  185 k
+ libvirt-daemon-driver-secret     x86_64  1.2.17-13.el7_2.4      updates  155 k
+ libvirt-daemon-driver-storage    x86_64  1.2.17-13.el7_2.4      updates  327 k
+ lvm2                             x86_64  7:2.02.130-5.el7_2.2   updates  1.0 M
+ lvm2-libs                        x86_64  7:2.02.130-5.el7_2.2   updates  872 k
+ mariadb-devel                    x86_64  1:5.5.47-1.el7_2       updates  749 k
+ mariadb-libs                     x86_64  1:5.5.47-1.el7_2       updates  755 k
+ nspr                             x86_64  4.11.0-1.el7_2         updates  126 k
+ nss                              x86_64  3.21.0-9.el7_2         updates  850 k
+ nss-softokn                      x86_64  3.16.2.3-14.2.el7_2    updates  305 k
+ nss-softokn-freebl               x86_64  3.16.2.3-14.2.el7_2    updates  204 k
+ nss-sysinit                      x86_64  3.21.0-9.el7_2         updates   55 k
+ nss-tools                        x86_64  3.21.0-9.el7_2         updates  487 k
+ nss-util                         x86_64  3.21.0-2.2.el7_2       updates   72 k
+ openldap                         x86_64  2.4.40-9.el7_2         updates  348 k
+ openssl                          x86_64  1:1.0.1e-51.el7_2.5    updates  712 k
+ openssl-devel                    x86_64  1:1.0.1e-51.el7_2.5    updates  1.2 M
+ openssl-libs                     x86_64  1:1.0.1e-51.el7_2.5    updates  952 k
+ openssl-perl                     x86_64  1:1.0.1e-51.el7_2.5    updates   60 k
+ pcre                             x86_64  8.32-15.el7_2.1        updates  420 k
+ pcre-devel                       x86_64  8.32-15.el7_2.1        updates  479 k
+ python-perf                      x86_64  3.10.0-327.18.2.el7    updates  2.4 M
+ qemu-img                         x86_64  10:1.5.3-105.el7_2.4   updates  658 k
+ quota                            x86_64  1:4.01-11.el7_2.1      updates  178 k
+ quota-nls                        noarch  1:4.01-11.el7_2.1      updates   90 k
+ sudo                             x86_64  1.8.6p7-17.el7_2       updates  732 k
+ systemd                          x86_64  219-19.el7_2.9         updates  5.1 M
+ systemd-libs                     x86_64  219-19.el7_2.9         updates  358 k
+ systemd-sysv                     x86_64  219-19.el7_2.9         updates   53 k
+ teamd                            x86_64  1.17-6.el7_2           updates  109 k
+ tuned                            noarch  2.5.1-4.el7_2.3        updates  193 k
+ tzdata                           noarch  2016d-1.el7            updates  439 k
+ util-linux                       x86_64  2.23.2-26.el7_2.2      updates  1.9 M
+
+Transaction Summary
+================================================================================
+Install   2 Packages
+Upgrade  66 Packages
+
+Total download size: 101 M
+Downloading packages:
+Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+--------------------------------------------------------------------------------
+Total                                               55 MB/s | 101 MB  00:01     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : kernel-headers-3.10.0-327.18.2.el7.x86_64                  1/134 
+  Updating   : 1:quota-nls-4.01-11.el7_2.1.noarch                         2/134 
+  Updating   : tzdata-2016d-1.el7.noarch                                  3/134 
+  Updating   : nss-softokn-freebl-3.16.2.3-14.2.el7_2.x86_64              4/134 
+  Updating   : glibc-2.17-106.el7_2.6.x86_64                              5/134 
+  Updating   : glibc-common-2.17-106.el7_2.6.x86_64                       6/134 
+  Updating   : systemd-libs-219-19.el7_2.9.x86_64                         7/134 
+  Updating   : nspr-4.11.0-1.el7_2.x86_64                                 8/134 
+  Updating   : nss-util-3.21.0-2.2.el7_2.x86_64                           9/134 
+  Updating   : libuuid-2.23.2-26.el7_2.2.x86_64                          10/134 
+  Updating   : libblkid-2.23.2-26.el7_2.2.x86_64                         11/134 
+  Updating   : krb5-libs-1.13.2-12.el7_2.x86_64                          12/134 
+  Updating   : 1:openssl-libs-1.0.1e-51.el7_2.5.x86_64                   13/134 
+  Updating   : libmount-2.23.2-26.el7_2.2.x86_64                         14/134 
+  Updating   : systemd-219-19.el7_2.9.x86_64                             15/134 
+  Updating   : util-linux-2.23.2-26.el7_2.2.x86_64                       16/134 
+  Updating   : 7:device-mapper-1.02.107-5.el7_2.2.x86_64                 17/134 
+  Updating   : 7:device-mapper-libs-1.02.107-5.el7_2.2.x86_64            18/134 
+  Updating   : 7:device-mapper-event-libs-1.02.107-5.el7_2.2.x86_64      19/134 
+  Updating   : nss-softokn-3.16.2.3-14.2.el7_2.x86_64                    20/134 
+  Updating   : chkconfig-1.3.61-5.el7_2.1.x86_64                         21/134 
+  Updating   : nss-3.21.0-9.el7_2.x86_64                                 22/134 
+  Updating   : nss-sysinit-3.21.0-9.el7_2.x86_64                         23/134 
+  Updating   : nss-tools-3.21.0-9.el7_2.x86_64                           24/134 
+  Updating   : openldap-2.4.40-9.el7_2.x86_64                            25/134 
+  Updating   : initscripts-9.49.30-1.el7_2.2.x86_64                      26/134 
+  Updating   : 7:device-mapper-event-1.02.107-5.el7_2.2.x86_64           27/134 
+  Updating   : 7:lvm2-libs-2.02.130-5.el7_2.2.x86_64                     28/134 
+  Updating   : 7:lvm2-2.02.130-5.el7_2.2.x86_64                          29/134 
+  Updating   : libvirt-client-1.2.17-13.el7_2.4.x86_64                   30/134 
+  Updating   : systemd-sysv-219-19.el7_2.9.x86_64                        31/134 
+  Updating   : libvirt-daemon-1.2.17-13.el7_2.4.x86_64                   32/134 
+  Updating   : libvirt-daemon-driver-nwfilter-1.2.17-13.el7_2.4.x86_6    33/134 
+  Updating   : cronie-anacron-1.4.11-14.el7_2.1.x86_64                   34/134 
+  Updating   : cronie-1.4.11-14.el7_2.1.x86_64                           35/134 
+  Updating   : 1:mariadb-libs-5.5.47-1.el7_2.x86_64                      36/134 
+  Updating   : 1:openssl-1.0.1e-51.el7_2.5.x86_64                        37/134 
+  Updating   : krb5-devel-1.13.2-12.el7_2.x86_64                         38/134 
+  Updating   : 1:openssl-devel-1.0.1e-51.el7_2.5.x86_64                  39/134 
+  Updating   : 10:qemu-img-1.5.3-105.el7_2.4.x86_64                      40/134 
+  Updating   : libgudev1-219-19.el7_2.9.x86_64                           41/134 
+  Updating   : pcre-8.32-15.el7_2.1.x86_64                               42/134 
+  Updating   : kernel-tools-libs-3.10.0-327.18.2.el7.x86_64              43/134 
+  Updating   : python-perf-3.10.0-327.18.2.el7.x86_64                    44/134 
+  Updating   : libtalloc-2.1.5-1.el7_2.x86_64                            45/134 
+  Updating   : glibc-headers-2.17-106.el7_2.6.x86_64                     46/134 
+  Updating   : libteam-1.17-6.el7_2.x86_64                               47/134 
+  Updating   : teamd-1.17-6.el7_2.x86_64                                 48/134 
+  Updating   : glibc-devel-2.17-106.el7_2.6.x86_64                       49/134 
+  Updating   : libtevent-0.9.26-1.el7_2.1.x86_64                         50/134 
+  Updating   : tuned-2.5.1-4.el7_2.3.noarch                              51/134 
+  Updating   : kernel-tools-3.10.0-327.18.2.el7.x86_64                   52/134 
+  Updating   : pcre-devel-8.32-15.el7_2.1.x86_64                         53/134 
+  Updating   : 1:NetworkManager-libnm-1.0.6-29.el7_2.x86_64              54/134 
+  Updating   : libvirt-daemon-driver-storage-1.2.17-13.el7_2.4.x86_64    55/134 
+  Updating   : 1:mariadb-devel-5.5.47-1.el7_2.x86_64                     56/134 
+  Updating   : 1:openssl-perl-1.0.1e-51.el7_2.5.x86_64                   57/134 
+  Updating   : libvirt-daemon-config-nwfilter-1.2.17-13.el7_2.4.x86_6    58/134 
+  Updating   : libvirt-daemon-driver-nodedev-1.2.17-13.el7_2.4.x86_64    59/134 
+  Updating   : libvirt-daemon-driver-secret-1.2.17-13.el7_2.4.x86_64     60/134 
+  Updating   : libvirt-daemon-driver-interface-1.2.17-13.el7_2.4.x86_    61/134 
+  Installing : kernel-3.10.0-327.18.2.el7.x86_64                         62/134 
+  Updating   : sudo-1.8.6p7-17.el7_2.x86_64                              63/134 
+  Updating   : kpartx-0.4.9-85.el7_2.4.x86_64                            64/134 
+  Updating   : 1:quota-4.01-11.el7_2.1.x86_64                            65/134 
+  Updating   : graphite2-1.3.6-1.el7_2.x86_64                            66/134 
+  Updating   : libndp-1.2-6.el7_2.x86_64                                 67/134 
+  Installing : kernel-devel-3.10.0-327.18.2.el7.x86_64                   68/134 
+  Cleanup    : tuned-2.5.1-4.el7_2.2.noarch                              69/134 
+  Cleanup    : glibc-devel-2.17-106.el7_2.4.x86_64                       70/134 
+  Cleanup    : libvirt-daemon-driver-storage-1.2.17-13.el7_2.3.x86_64    71/134 
+  Cleanup    : 7:lvm2-2.02.130-5.el7_2.1.x86_64                          72/134 
+  Cleanup    : 1:NetworkManager-libnm-1.0.6-27.el7.x86_64                73/134 
+  Cleanup    : 7:lvm2-libs-2.02.130-5.el7_2.1.x86_64                     74/134 
+  Cleanup    : 7:device-mapper-event-1.02.107-5.el7_2.1.x86_64           75/134 
+  Cleanup    : libvirt-daemon-driver-nodedev-1.2.17-13.el7_2.3.x86_64    76/134 
+  Cleanup    : libvirt-daemon-driver-interface-1.2.17-13.el7_2.3.x86_    77/134 
+  Cleanup    : libgudev1-219-19.el7_2.4.x86_64                           78/134 
+  Cleanup    : kernel-tools-3.10.0-327.10.1.el7.x86_64                   79/134 
+  Cleanup    : 1:quota-4.01-11.el7.x86_64                                80/134 
+  Cleanup    : initscripts-9.49.30-1.el7.x86_64                          81/134 
+  Cleanup    : 7:device-mapper-event-libs-1.02.107-5.el7_2.1.x86_64      82/134 
+  Cleanup    : 10:qemu-img-1.5.3-105.el7_2.3.x86_64                      83/134 
+  Cleanup    : libtevent-0.9.25-1.el7.x86_64                             84/134 
+  Cleanup    : libvirt-daemon-driver-secret-1.2.17-13.el7_2.3.x86_64     85/134 
+  Cleanup    : teamd-1.17-5.el7.x86_64                                   86/134 
+  Cleanup    : sudo-1.8.6p7-16.el7.x86_64                                87/134 
+  Cleanup    : openldap-2.4.40-8.el7.x86_64                              88/134 
+  Cleanup    : nss-tools-3.19.1-19.el7_2.x86_64                          89/134 
+  Cleanup    : nss-sysinit-3.19.1-19.el7_2.x86_64                        90/134 
+  Cleanup    : nss-3.19.1-19.el7_2.x86_64                                91/134 
+  Cleanup    : nss-softokn-3.16.2.3-13.el7_1.x86_64                      92/134 
+  Cleanup    : nss-util-3.19.1-9.el7_2.x86_64                            93/134 
+  Cleanup    : kpartx-0.4.9-85.el7.x86_64                                94/134 
+  Cleanup    : glibc-headers-2.17-106.el7_2.4.x86_64                     95/134 
+  Cleanup    : 1:mariadb-devel-5.5.44-2.el7.centos.x86_64                96/134 
+  Cleanup    : 1:openssl-devel-1.0.1e-51.el7_2.4.x86_64                  97/134 
+  Cleanup    : libvirt-daemon-config-nwfilter-1.2.17-13.el7_2.3.x86_6    98/134 
+  Cleanup    : pcre-devel-8.32-15.el7.x86_64                             99/134 
+  Cleanup    : 1:openssl-perl-1.0.1e-51.el7_2.4.x86_64                  100/134 
+  Cleanup    : 1:openssl-1.0.1e-51.el7_2.4.x86_64                       101/134 
+  Cleanup    : 1:mariadb-libs-5.5.44-2.el7.centos.x86_64                102/134 
+  Cleanup    : krb5-devel-1.13.2-10.el7.x86_64                          103/134 
+  Cleanup    : krb5-libs-1.13.2-10.el7.x86_64                           104/134 
+  Cleanup    : 1:openssl-libs-1.0.1e-51.el7_2.4.x86_64                  105/134 
+  Cleanup    : libvirt-daemon-driver-nwfilter-1.2.17-13.el7_2.3.x86_6   106/134 
+  Cleanup    : libvirt-daemon-1.2.17-13.el7_2.3.x86_64                  107/134 
+  Cleanup    : libvirt-client-1.2.17-13.el7_2.3.x86_64                  108/134 
+  Cleanup    : 7:device-mapper-1.02.107-5.el7_2.1.x86_64                109/134 
+  Cleanup    : 7:device-mapper-libs-1.02.107-5.el7_2.1.x86_64           110/134 
+  Cleanup    : util-linux-2.23.2-26.el7.x86_64                          111/134 
+  Cleanup    : cronie-1.4.11-14.el7.x86_64                              112/134 
+  Cleanup    : cronie-anacron-1.4.11-14.el7.x86_64                      113/134 
+  Cleanup    : systemd-sysv-219-19.el7_2.4.x86_64                       114/134 
+  Cleanup    : systemd-219-19.el7_2.4.x86_64                            115/134 
+  Cleanup    : libmount-2.23.2-26.el7.x86_64                            116/134 
+  Cleanup    : libblkid-2.23.2-26.el7.x86_64                            117/134 
+  Cleanup    : libuuid-2.23.2-26.el7.x86_64                             118/134 
+  Cleanup    : systemd-libs-219-19.el7_2.4.x86_64                       119/134 
+  Cleanup    : pcre-8.32-15.el7.x86_64                                  120/134 
+  Cleanup    : nspr-4.10.8-2.el7_1.x86_64                               121/134 
+  Cleanup    : chkconfig-1.3.61-5.el7.x86_64                            122/134 
+  Cleanup    : libteam-1.17-5.el7.x86_64                                123/134 
+  Cleanup    : libtalloc-2.1.2-1.el7.x86_64                             124/134 
+  Cleanup    : kernel-tools-libs-3.10.0-327.10.1.el7.x86_64             125/134 
+  Cleanup    : python-perf-3.10.0-327.10.1.el7.x86_64                   126/134 
+  Cleanup    : libndp-1.2-4.el7.x86_64                                  127/134 
+  Cleanup    : graphite2-1.2.2-5.el7.x86_64                             128/134 
+  Cleanup    : kernel-headers-3.10.0-327.10.1.el7.x86_64                129/134 
+  Cleanup    : 1:quota-nls-4.01-11.el7.noarch                           130/134 
+  Cleanup    : glibc-common-2.17-106.el7_2.4.x86_64                     131/134 
+  Cleanup    : nss-softokn-freebl-3.16.2.3-13.el7_1.x86_64              132/134 
+  Cleanup    : glibc-2.17-106.el7_2.4.x86_64                            133/134 
+  Cleanup    : tzdata-2016c-1.el7.noarch                                134/134 
+  Verifying  : kpartx-0.4.9-85.el7_2.4.x86_64                             1/134 
+  Verifying  : sudo-1.8.6p7-17.el7_2.x86_64                               2/134 
+  Verifying  : 7:device-mapper-libs-1.02.107-5.el7_2.2.x86_64             3/134 
+  Verifying  : glibc-devel-2.17-106.el7_2.6.x86_64                        4/134 
+  Verifying  : pcre-8.32-15.el7_2.1.x86_64                                5/134 
+  Verifying  : libuuid-2.23.2-26.el7_2.2.x86_64                           6/134 
+  Verifying  : 7:lvm2-2.02.130-5.el7_2.2.x86_64                           7/134 
+  Verifying  : libmount-2.23.2-26.el7_2.2.x86_64                          8/134 
+  Verifying  : nss-util-3.21.0-2.2.el7_2.x86_64                           9/134 
+  Verifying  : libvirt-daemon-driver-nwfilter-1.2.17-13.el7_2.4.x86_6    10/134 
+  Verifying  : 7:device-mapper-event-libs-1.02.107-5.el7_2.2.x86_64      11/134 
+  Verifying  : cronie-anacron-1.4.11-14.el7_2.1.x86_64                   12/134 
+  Verifying  : 1:openssl-devel-1.0.1e-51.el7_2.5.x86_64                  13/134 
+  Verifying  : 1:openssl-perl-1.0.1e-51.el7_2.5.x86_64                   14/134 
+  Verifying  : 1:quota-4.01-11.el7_2.1.x86_64                            15/134 
+  Verifying  : teamd-1.17-6.el7_2.x86_64                                 16/134 
+  Verifying  : kernel-3.10.0-327.18.2.el7.x86_64                         17/134 
+  Verifying  : tzdata-2016d-1.el7.noarch                                 18/134 
+  Verifying  : libvirt-daemon-driver-nodedev-1.2.17-13.el7_2.4.x86_64    19/134 
+  Verifying  : libvirt-daemon-config-nwfilter-1.2.17-13.el7_2.4.x86_6    20/134 
+  Verifying  : 10:qemu-img-1.5.3-105.el7_2.4.x86_64                      21/134 
+  Verifying  : openldap-2.4.40-9.el7_2.x86_64                            22/134 
+  Verifying  : tuned-2.5.1-4.el7_2.3.noarch                              23/134 
+  Verifying  : nspr-4.11.0-1.el7_2.x86_64                                24/134 
+  Verifying  : libvirt-client-1.2.17-13.el7_2.4.x86_64                   25/134 
+  Verifying  : libvirt-daemon-driver-storage-1.2.17-13.el7_2.4.x86_64    26/134 
+  Verifying  : krb5-libs-1.13.2-12.el7_2.x86_64                          27/134 
+  Verifying  : graphite2-1.3.6-1.el7_2.x86_64                            28/134 
+  Verifying  : kernel-tools-3.10.0-327.18.2.el7.x86_64                   29/134 
+  Verifying  : systemd-219-19.el7_2.9.x86_64                             30/134 
+  Verifying  : 1:mariadb-libs-5.5.47-1.el7_2.x86_64                      31/134 
+  Verifying  : 7:lvm2-libs-2.02.130-5.el7_2.2.x86_64                     32/134 
+  Verifying  : systemd-libs-219-19.el7_2.9.x86_64                        33/134 
+  Verifying  : 7:device-mapper-event-1.02.107-5.el7_2.2.x86_64           34/134 
+  Verifying  : initscripts-9.49.30-1.el7_2.2.x86_64                      35/134 
+  Verifying  : kernel-tools-libs-3.10.0-327.18.2.el7.x86_64              36/134 
+  Verifying  : 1:openssl-libs-1.0.1e-51.el7_2.5.x86_64                   37/134 
+  Verifying  : nss-tools-3.21.0-9.el7_2.x86_64                           38/134 
+  Verifying  : libvirt-daemon-driver-secret-1.2.17-13.el7_2.4.x86_64     39/134 
+  Verifying  : libvirt-daemon-driver-interface-1.2.17-13.el7_2.4.x86_    40/134 
+  Verifying  : chkconfig-1.3.61-5.el7_2.1.x86_64                         41/134 
+  Verifying  : python-perf-3.10.0-327.18.2.el7.x86_64                    42/134 
+  Verifying  : pcre-devel-8.32-15.el7_2.1.x86_64                         43/134 
+  Verifying  : 1:NetworkManager-libnm-1.0.6-29.el7_2.x86_64              44/134 
+  Verifying  : 1:openssl-1.0.1e-51.el7_2.5.x86_64                        45/134 
+  Verifying  : libtevent-0.9.26-1.el7_2.1.x86_64                         46/134 
+  Verifying  : 1:quota-nls-4.01-11.el7_2.1.noarch                        47/134 
+  Verifying  : krb5-devel-1.13.2-12.el7_2.x86_64                         48/134 
+  Verifying  : libtalloc-2.1.5-1.el7_2.x86_64                            49/134 
+  Verifying  : systemd-sysv-219-19.el7_2.9.x86_64                        50/134 
+  Verifying  : glibc-2.17-106.el7_2.6.x86_64                             51/134 
+  Verifying  : libgudev1-219-19.el7_2.9.x86_64                           52/134 
+  Verifying  : 7:device-mapper-1.02.107-5.el7_2.2.x86_64                 53/134 
+  Verifying  : glibc-common-2.17-106.el7_2.6.x86_64                      54/134 
+  Verifying  : kernel-devel-3.10.0-327.18.2.el7.x86_64                   55/134 
+  Verifying  : libblkid-2.23.2-26.el7_2.2.x86_64                         56/134 
+  Verifying  : nss-3.21.0-9.el7_2.x86_64                                 57/134 
+  Verifying  : nss-softokn-3.16.2.3-14.2.el7_2.x86_64                    58/134 
+  Verifying  : nss-softokn-freebl-3.16.2.3-14.2.el7_2.x86_64             59/134 
+  Verifying  : kernel-headers-3.10.0-327.18.2.el7.x86_64                 60/134 
+  Verifying  : glibc-headers-2.17-106.el7_2.6.x86_64                     61/134 
+  Verifying  : nss-sysinit-3.21.0-9.el7_2.x86_64                         62/134 
+  Verifying  : libndp-1.2-6.el7_2.x86_64                                 63/134 
+  Verifying  : libteam-1.17-6.el7_2.x86_64                               64/134 
+  Verifying  : 1:mariadb-devel-5.5.47-1.el7_2.x86_64                     65/134 
+  Verifying  : libvirt-daemon-1.2.17-13.el7_2.4.x86_64                   66/134 
+  Verifying  : cronie-1.4.11-14.el7_2.1.x86_64                           67/134 
+  Verifying  : util-linux-2.23.2-26.el7_2.2.x86_64                       68/134 
+  Verifying  : 7:device-mapper-event-libs-1.02.107-5.el7_2.1.x86_64      69/134 
+  Verifying  : glibc-common-2.17-106.el7_2.4.x86_64                      70/134 
+  Verifying  : libvirt-daemon-config-nwfilter-1.2.17-13.el7_2.3.x86_6    71/134 
+  Verifying  : systemd-libs-219-19.el7_2.4.x86_64                        72/134 
+  Verifying  : libvirt-daemon-1.2.17-13.el7_2.3.x86_64                   73/134 
+  Verifying  : nss-3.19.1-19.el7_2.x86_64                                74/134 
+  Verifying  : 1:openssl-devel-1.0.1e-51.el7_2.4.x86_64                  75/134 
+  Verifying  : graphite2-1.2.2-5.el7.x86_64                              76/134 
+  Verifying  : libmount-2.23.2-26.el7.x86_64                             77/134 
+  Verifying  : systemd-sysv-219-19.el7_2.4.x86_64                        78/134 
+  Verifying  : nss-util-3.19.1-9.el7_2.x86_64                            79/134 
+  Verifying  : kpartx-0.4.9-85.el7.x86_64                                80/134 
+  Verifying  : krb5-libs-1.13.2-10.el7.x86_64                            81/134 
+  Verifying  : 7:device-mapper-1.02.107-5.el7_2.1.x86_64                 82/134 
+  Verifying  : kernel-tools-libs-3.10.0-327.10.1.el7.x86_64              83/134 
+  Verifying  : pcre-devel-8.32-15.el7.x86_64                             84/134 
+  Verifying  : krb5-devel-1.13.2-10.el7.x86_64                           85/134 
+  Verifying  : cronie-1.4.11-14.el7.x86_64                               86/134 
+  Verifying  : tzdata-2016c-1.el7.noarch                                 87/134 
+  Verifying  : nss-softokn-3.16.2.3-13.el7_1.x86_64                      88/134 
+  Verifying  : libvirt-daemon-driver-storage-1.2.17-13.el7_2.3.x86_64    89/134 
+  Verifying  : systemd-219-19.el7_2.4.x86_64                             90/134 
+  Verifying  : kernel-headers-3.10.0-327.10.1.el7.x86_64                 91/134 
+  Verifying  : 7:device-mapper-event-1.02.107-5.el7_2.1.x86_64           92/134 
+  Verifying  : kernel-tools-3.10.0-327.10.1.el7.x86_64                   93/134 
+  Verifying  : 1:mariadb-devel-5.5.44-2.el7.centos.x86_64                94/134 
+  Verifying  : cronie-anacron-1.4.11-14.el7.x86_64                       95/134 
+  Verifying  : 1:quota-nls-4.01-11.el7.noarch                            96/134 
+  Verifying  : glibc-headers-2.17-106.el7_2.4.x86_64                     97/134 
+  Verifying  : 1:NetworkManager-libnm-1.0.6-27.el7.x86_64                98/134 
+  Verifying  : util-linux-2.23.2-26.el7.x86_64                           99/134 
+  Verifying  : libteam-1.17-5.el7.x86_64                                100/134 
+  Verifying  : tuned-2.5.1-4.el7_2.2.noarch                             101/134 
+  Verifying  : 1:mariadb-libs-5.5.44-2.el7.centos.x86_64                102/134 
+  Verifying  : libtevent-0.9.25-1.el7.x86_64                            103/134 
+  Verifying  : 1:openssl-perl-1.0.1e-51.el7_2.4.x86_64                  104/134 
+  Verifying  : teamd-1.17-5.el7.x86_64                                  105/134 
+  Verifying  : libvirt-daemon-driver-interface-1.2.17-13.el7_2.3.x86_   106/134 
+  Verifying  : pcre-8.32-15.el7.x86_64                                  107/134 
+  Verifying  : libvirt-daemon-driver-secret-1.2.17-13.el7_2.3.x86_64    108/134 
+  Verifying  : chkconfig-1.3.61-5.el7.x86_64                            109/134 
+  Verifying  : python-perf-3.10.0-327.10.1.el7.x86_64                   110/134 
+  Verifying  : 1:openssl-libs-1.0.1e-51.el7_2.4.x86_64                  111/134 
+  Verifying  : libvirt-daemon-driver-nodedev-1.2.17-13.el7_2.3.x86_64   112/134 
+  Verifying  : libvirt-client-1.2.17-13.el7_2.3.x86_64                  113/134 
+  Verifying  : libblkid-2.23.2-26.el7.x86_64                            114/134 
+  Verifying  : nss-sysinit-3.19.1-19.el7_2.x86_64                       115/134 
+  Verifying  : libtalloc-2.1.2-1.el7.x86_64                             116/134 
+  Verifying  : 1:openssl-1.0.1e-51.el7_2.4.x86_64                       117/134 
+  Verifying  : glibc-devel-2.17-106.el7_2.4.x86_64                      118/134 
+  Verifying  : sudo-1.8.6p7-16.el7.x86_64                               119/134 
+  Verifying  : nss-tools-3.19.1-19.el7_2.x86_64                         120/134 
+  Verifying  : 1:quota-4.01-11.el7.x86_64                               121/134 
+  Verifying  : libuuid-2.23.2-26.el7.x86_64                             122/134 
+  Verifying  : libvirt-daemon-driver-nwfilter-1.2.17-13.el7_2.3.x86_6   123/134 
+  Verifying  : 7:device-mapper-libs-1.02.107-5.el7_2.1.x86_64           124/134 
+  Verifying  : libndp-1.2-4.el7.x86_64                                  125/134 
+  Verifying  : libgudev1-219-19.el7_2.4.x86_64                          126/134 
+  Verifying  : 10:qemu-img-1.5.3-105.el7_2.3.x86_64                     127/134 
+  Verifying  : 7:lvm2-libs-2.02.130-5.el7_2.1.x86_64                    128/134 
+  Verifying  : initscripts-9.49.30-1.el7.x86_64                         129/134 
+  Verifying  : openldap-2.4.40-8.el7.x86_64                             130/134 
+  Verifying  : 7:lvm2-2.02.130-5.el7_2.1.x86_64                         131/134 
+  Verifying  : nss-softokn-freebl-3.16.2.3-13.el7_1.x86_64              132/134 
+  Verifying  : nspr-4.10.8-2.el7_1.x86_64                               133/134 
+  Verifying  : glibc-2.17-106.el7_2.4.x86_64                            134/134 
+
+Installed:
+  kernel.x86_64 0:3.10.0-327.18.2.el7 kernel-devel.x86_64 0:3.10.0-327.18.2.el7
+
+Updated:
+  NetworkManager-libnm.x86_64 1:1.0.6-29.el7_2                                  
+  chkconfig.x86_64 0:1.3.61-5.el7_2.1                                           
+  cronie.x86_64 0:1.4.11-14.el7_2.1                                             
+  cronie-anacron.x86_64 0:1.4.11-14.el7_2.1                                     
+  device-mapper.x86_64 7:1.02.107-5.el7_2.2                                     
+  device-mapper-event.x86_64 7:1.02.107-5.el7_2.2                               
+  device-mapper-event-libs.x86_64 7:1.02.107-5.el7_2.2                          
+  device-mapper-libs.x86_64 7:1.02.107-5.el7_2.2                                
+  glibc.x86_64 0:2.17-106.el7_2.6                                               
+  glibc-common.x86_64 0:2.17-106.el7_2.6                                        
+  glibc-devel.x86_64 0:2.17-106.el7_2.6                                         
+  glibc-headers.x86_64 0:2.17-106.el7_2.6                                       
+  graphite2.x86_64 0:1.3.6-1.el7_2                                              
+  initscripts.x86_64 0:9.49.30-1.el7_2.2                                        
+  kernel-headers.x86_64 0:3.10.0-327.18.2.el7                                   
+  kernel-tools.x86_64 0:3.10.0-327.18.2.el7                                     
+  kernel-tools-libs.x86_64 0:3.10.0-327.18.2.el7                                
+  kpartx.x86_64 0:0.4.9-85.el7_2.4                                              
+  krb5-devel.x86_64 0:1.13.2-12.el7_2                                           
+  krb5-libs.x86_64 0:1.13.2-12.el7_2                                            
+  libblkid.x86_64 0:2.23.2-26.el7_2.2                                           
+  libgudev1.x86_64 0:219-19.el7_2.9                                             
+  libmount.x86_64 0:2.23.2-26.el7_2.2                                           
+  libndp.x86_64 0:1.2-6.el7_2                                                   
+  libtalloc.x86_64 0:2.1.5-1.el7_2                                              
+  libteam.x86_64 0:1.17-6.el7_2                                                 
+  libtevent.x86_64 0:0.9.26-1.el7_2.1                                           
+  libuuid.x86_64 0:2.23.2-26.el7_2.2                                            
+  libvirt-client.x86_64 0:1.2.17-13.el7_2.4                                     
+  libvirt-daemon.x86_64 0:1.2.17-13.el7_2.4                                     
+  libvirt-daemon-config-nwfilter.x86_64 0:1.2.17-13.el7_2.4                     
+  libvirt-daemon-driver-interface.x86_64 0:1.2.17-13.el7_2.4                    
+  libvirt-daemon-driver-nodedev.x86_64 0:1.2.17-13.el7_2.4                      
+  libvirt-daemon-driver-nwfilter.x86_64 0:1.2.17-13.el7_2.4                     
+  libvirt-daemon-driver-secret.x86_64 0:1.2.17-13.el7_2.4                       
+  libvirt-daemon-driver-storage.x86_64 0:1.2.17-13.el7_2.4                      
+  lvm2.x86_64 7:2.02.130-5.el7_2.2                                              
+  lvm2-libs.x86_64 7:2.02.130-5.el7_2.2                                         
+  mariadb-devel.x86_64 1:5.5.47-1.el7_2                                         
+  mariadb-libs.x86_64 1:5.5.47-1.el7_2                                          
+  nspr.x86_64 0:4.11.0-1.el7_2                                                  
+  nss.x86_64 0:3.21.0-9.el7_2                                                   
+  nss-softokn.x86_64 0:3.16.2.3-14.2.el7_2                                      
+  nss-softokn-freebl.x86_64 0:3.16.2.3-14.2.el7_2                               
+  nss-sysinit.x86_64 0:3.21.0-9.el7_2                                           
+  nss-tools.x86_64 0:3.21.0-9.el7_2                                             
+  nss-util.x86_64 0:3.21.0-2.2.el7_2                                            
+  openldap.x86_64 0:2.4.40-9.el7_2                                              
+  openssl.x86_64 1:1.0.1e-51.el7_2.5                                            
+  openssl-devel.x86_64 1:1.0.1e-51.el7_2.5                                      
+  openssl-libs.x86_64 1:1.0.1e-51.el7_2.5                                       
+  openssl-perl.x86_64 1:1.0.1e-51.el7_2.5                                       
+  pcre.x86_64 0:8.32-15.el7_2.1                                                 
+  pcre-devel.x86_64 0:8.32-15.el7_2.1                                           
+  python-perf.x86_64 0:3.10.0-327.18.2.el7                                      
+  qemu-img.x86_64 10:1.5.3-105.el7_2.4                                          
+  quota.x86_64 1:4.01-11.el7_2.1                                                
+  quota-nls.noarch 1:4.01-11.el7_2.1                                            
+  sudo.x86_64 0:1.8.6p7-17.el7_2                                                
+  systemd.x86_64 0:219-19.el7_2.9                                               
+  systemd-libs.x86_64 0:219-19.el7_2.9                                          
+  systemd-sysv.x86_64 0:219-19.el7_2.9                                          
+  teamd.x86_64 0:1.17-6.el7_2                                                   
+  tuned.noarch 0:2.5.1-4.el7_2.3                                                
+  tzdata.noarch 0:2016d-1.el7                                                   
+  util-linux.x86_64 0:2.23.2-26.el7_2.2                                         
+
+Complete!
++ yum -y install pciutils
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.xmission.com
+ * extras: mirror.scalabledns.com
+ * updates: mirrors.xmission.com
+Package pciutils-3.2.1-4.el7.x86_64 already installed and latest version
+Nothing to do
++ yum groupinstall -y 'Infiniband Support'
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.xmission.com
+ * extras: mirror.scalabledns.com
+ * updates: mirrors.xmission.com
+Maybe run: yum groups mark install (see man yum)
+No packages in any requested group available to install or update
++ yum install -y infiniband-diags perftest libibverbs-utils librdmacm-utils libipathverbs libmlx4
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.xmission.com
+ * extras: mirror.scalabledns.com
+ * updates: mirrors.xmission.com
+Package infiniband-diags-1.6.5-3.el7.x86_64 already installed and latest version
+Package perftest-2.4-1.el7.x86_64 already installed and latest version
+Package libibverbs-utils-1.1.8-8.el7.x86_64 already installed and latest version
+Package librdmacm-utils-1.0.21-1.el7.x86_64 already installed and latest version
+Package libipathverbs-1.3-2.el7.x86_64 already installed and latest version
+Package libmlx4-1.0.6-5.el7.x86_64 already installed and latest version
+Nothing to do
++ yum install -y librdmacm-devel libibverbs-devel numactl numactl-devel libaio-devel libevent-devel
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.xmission.com
+ * extras: mirror.scalabledns.com
+ * updates: mirrors.xmission.com
+Package librdmacm-devel-1.0.21-1.el7.x86_64 already installed and latest version
+Package libibverbs-devel-1.1.8-8.el7.x86_64 already installed and latest version
+Package numactl-2.0.9-6.el7_2.x86_64 already installed and latest version
+Package numactl-devel-2.0.9-6.el7_2.x86_64 already installed and latest version
+Package libaio-devel-0.3.109-13.el7.x86_64 already installed and latest version
+Package libevent-devel-2.0.21-4.el7.x86_64 already installed and latest version
+Nothing to do
++ cat
++ tee /etc/security/limits.d/90-rmda.conf
++ echo ssh
++ tee /etc/pdsh/rcmd_default
+tee: /etc/pdsh/rcmd_default: No such file or directory
+ssh
++ sed -i 's/HostbasedAuthentication no/HostbasedAuthentication yes/' /etc/ssh/sshd_config
++ cat
++ tee -a /etc/ssh/ssh_config
+    HostbasedAuthentication yes
+    EnableSSHKeysign yes
++ cat
++ tee /etc/ssh/shosts.equiv
+++ for each in '$HOSTS' localhost
+++ grep cp-1 /etc/hosts
+++ awk '{print $1}'
+++ for each in '$HOSTS' localhost
+++ grep cp-2 /etc/hosts
+++ awk '{print $1}'
+++ for each in '$HOSTS' localhost
+++ grep localhost /etc/hosts
+++ awk '{print $1}'
+++ for each in '$HOSTS' localhost
+++ echo cp-1
+++ for each in '$HOSTS' localhost
+++ echo cp-2
+++ for each in '$HOSTS' localhost
+++ echo localhost
+++ for each in '$HOSTS'
+++ grep cp-1 /etc/hosts
+++ awk '{print $2}'
+++ for each in '$HOSTS'
+++ grep cp-2 /etc/hosts
+++ awk '{print $2}'
+++ for each in '$HOSTS'
+++ grep cp-1 /etc/hosts
+++ awk '{print $3}'
+++ for each in '$HOSTS'
+++ grep cp-2 /etc/hosts
+++ awk '{print $3}'
++ for each in '$HOSTS'
++ ssh-keyscan cp-1
+# cp-1 SSH-2.0-OpenSSH_6.6.1
+# cp-1 SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ grep -q cp-1 /etc/ssh/ssh_known_hosts
++ echo 'Node cp-1 is up'
+Node cp-1 is up
++ for each in '$HOSTS'
++ ssh-keyscan cp-2
+# cp-2 SSH-2.0-OpenSSH_6.6.1
+# cp-2 SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ grep -q cp-2 /etc/ssh/ssh_known_hosts
++ echo 'Node cp-2 is up'
+Node cp-2 is up
++ for each in '$HOSTS' localhost
+++ grep cp-1 /etc/hosts
+++ awk '{print $2}'
++ ssh-keyscan cp-1-mgmt-lan
+# cp-1-mgmt-lan SSH-2.0-OpenSSH_6.6.1
+# cp-1-mgmt-lan SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ for each in '$HOSTS' localhost
+++ grep cp-2 /etc/hosts
+++ awk '{print $2}'
++ ssh-keyscan cp-2-mgmt-lan
+# cp-2-mgmt-lan SSH-2.0-OpenSSH_6.6.1
+# cp-2-mgmt-lan SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ for each in '$HOSTS' localhost
+++ grep localhost /etc/hosts
+++ awk '{print $2}'
++ ssh-keyscan localhost
+# localhost SSH-2.0-OpenSSH_6.6.1
+# localhost SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ for each in '$HOSTS' localhost
+++ grep cp-1 /etc/hosts
+++ awk '{print $1}'
++ ssh-keyscan 192.168.0.1
+# 192.168.0.1 SSH-2.0-OpenSSH_6.6.1
+# 192.168.0.1 SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ for each in '$HOSTS' localhost
+++ grep cp-2 /etc/hosts
+++ awk '{print $1}'
++ ssh-keyscan 192.168.0.2
+# 192.168.0.2 SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
+# 192.168.0.2 SSH-2.0-OpenSSH_6.6.1
++ for each in '$HOSTS' localhost
+++ grep localhost /etc/hosts
+++ awk '{print $1}'
++ ssh-keyscan 127.0.0.1
+# 127.0.0.1 SSH-2.0-OpenSSH_6.6.1
+# 127.0.0.1 SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ service ssh restart
+Redirecting to /bin/systemctl restart  ssh.service
+Failed to restart ssh.service: Unit ssh.service failed to load: No such file or directory.
++ rm -f /opt/.setup_in_process

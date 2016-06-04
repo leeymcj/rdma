@@ -1,0 +1,186 @@
++ FLAG=/opt/.usersetup
++ SETUPFLAG=/opt/.setup_in_process
++ '[' '!' -f /opt/.setup_in_process ']'
++ touch /opt/.setup_in_process
++ touch /opt/.usersetup
+++ cat /etc/hosts
+++ grep cp-
+++ sort
+++ awk '{print $4}'
++ HOSTS='cp-1
+cp-2'
++ let i=0
++ for each in '$HOSTS'
++ ((  i += 1  ))
++ for each in '$HOSTS'
++ ((  i += 1  ))
++ cat
++ tee /etc/profile.d/firstboot.sh
++ chmod +x /etc/profile.d/firstboot.sh
++ cp /tmp/setup/phase2-setup.sh /usr/local/bin/phase2-setup.sh
++ cp /tmp/setup/pmem-setup.sh /usr/local/bin/pmem-setup.sh
++ cp /tmp/setup/accelio-setup.sh /usr/local/bin/accelio-setup.sh
++ cp /tmp/setup/grappa-setup.sh /usr/local/bin/grappa-setup.sh
++ chmod +x /usr/local/bin/phase2-setup.sh
++ chmod +x /usr/local/bin/pmem-setup.sh
++ chmod +x /usr/local/bin/accelio-setup.sh
++ chmod +x /usr/local/bin/grappa-setup.sh
+++ lsblk -o NAME,MODEL
+++ grep SSD
+++ awk 'NR==1{print $1}'
++ SSD=
++ '[' -n '' ']'
++ unset SSD
+++ cat /etc/redhat-release
++ [[ CentOS Linux release 7.2.1511 (Core)  =~ CentOS.* ]]
++ yum -y update
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.xmission.com
+ * extras: mirror.scalabledns.com
+ * updates: mirrors.xmission.com
+No packages marked for update
++ yum -y install pciutils
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.xmission.com
+ * extras: mirror.scalabledns.com
+ * updates: mirrors.xmission.com
+Package pciutils-3.2.1-4.el7.x86_64 already installed and latest version
+Nothing to do
++ yum groupinstall -y 'Infiniband Support'
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.xmission.com
+ * extras: mirror.scalabledns.com
+ * updates: mirrors.xmission.com
+Maybe run: yum groups mark install (see man yum)
+No packages in any requested group available to install or update
++ yum install -y infiniband-diags perftest libibverbs-utils librdmacm-utils libipathverbs libmlx4
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.xmission.com
+ * extras: mirror.scalabledns.com
+ * updates: mirrors.xmission.com
+Package infiniband-diags-1.6.5-3.el7.x86_64 already installed and latest version
+Package perftest-2.4-1.el7.x86_64 already installed and latest version
+Package libibverbs-utils-1.1.8-8.el7.x86_64 already installed and latest version
+Package librdmacm-utils-1.0.21-1.el7.x86_64 already installed and latest version
+Package libipathverbs-1.3-2.el7.x86_64 already installed and latest version
+Package libmlx4-1.0.6-5.el7.x86_64 already installed and latest version
+Nothing to do
++ yum install -y librdmacm-devel libibverbs-devel numactl numactl-devel libaio-devel libevent-devel
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.xmission.com
+ * extras: mirror.scalabledns.com
+ * updates: mirrors.xmission.com
+Package librdmacm-devel-1.0.21-1.el7.x86_64 already installed and latest version
+Package libibverbs-devel-1.1.8-8.el7.x86_64 already installed and latest version
+Package numactl-2.0.9-6.el7_2.x86_64 already installed and latest version
+Package numactl-devel-2.0.9-6.el7_2.x86_64 already installed and latest version
+Package libaio-devel-0.3.109-13.el7.x86_64 already installed and latest version
+Package libevent-devel-2.0.21-4.el7.x86_64 already installed and latest version
+Nothing to do
++ cat
++ tee /etc/security/limits.d/90-rmda.conf
++ echo ssh
++ tee /etc/pdsh/rcmd_default
+tee: /etc/pdsh/rcmd_default: No such file or directory
+ssh
++ sed -i 's/HostbasedAuthentication no/HostbasedAuthentication yes/' /etc/ssh/sshd_config
++ cat
++ tee -a /etc/ssh/ssh_config
+    HostbasedAuthentication yes
+    EnableSSHKeysign yes
++ cat
++ tee /etc/ssh/shosts.equiv
+++ for each in '$HOSTS' localhost
+++ grep cp-1 /etc/hosts
+++ awk '{print $1}'
+++ for each in '$HOSTS' localhost
+++ grep cp-2 /etc/hosts
+++ awk '{print $1}'
+++ for each in '$HOSTS' localhost
+++ grep localhost /etc/hosts
+++ awk '{print $1}'
+++ for each in '$HOSTS' localhost
+++ echo cp-1
+++ for each in '$HOSTS' localhost
+++ echo cp-2
+++ for each in '$HOSTS' localhost
+++ echo localhost
+++ for each in '$HOSTS'
+++ grep cp-1 /etc/hosts
+++ awk '{print $2}'
+++ for each in '$HOSTS'
+++ grep cp-2 /etc/hosts
+++ awk '{print $2}'
+++ for each in '$HOSTS'
+++ grep cp-1 /etc/hosts
+++ awk '{print $3}'
+++ for each in '$HOSTS'
+++ grep cp-2 /etc/hosts
+++ awk '{print $3}'
++ for each in '$HOSTS'
++ ssh-keyscan cp-1
+# cp-1 SSH-2.0-OpenSSH_6.6.1
+# cp-1 SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ grep -q cp-1 /etc/ssh/ssh_known_hosts
++ echo 'Node cp-1 is up'
+Node cp-1 is up
++ for each in '$HOSTS'
++ ssh-keyscan cp-2
+# cp-2 SSH-2.0-OpenSSH_6.6.1
+# cp-2 SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ grep -q cp-2 /etc/ssh/ssh_known_hosts
++ echo 'Node cp-2 is up'
+Node cp-2 is up
++ for each in '$HOSTS' localhost
+++ grep cp-1 /etc/hosts
+++ awk '{print $2}'
++ ssh-keyscan cp-1-mgmt-lan
+# cp-1-mgmt-lan SSH-2.0-OpenSSH_6.6.1
+# cp-1-mgmt-lan SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ for each in '$HOSTS' localhost
+++ grep cp-2 /etc/hosts
+++ awk '{print $2}'
++ ssh-keyscan cp-2-mgmt-lan
+# cp-2-mgmt-lan SSH-2.0-OpenSSH_6.6.1
+# cp-2-mgmt-lan SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ for each in '$HOSTS' localhost
+++ grep localhost /etc/hosts
+++ awk '{print $2}'
++ ssh-keyscan localhost
+# localhost SSH-2.0-OpenSSH_6.6.1
+# localhost SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ for each in '$HOSTS' localhost
+++ grep cp-1 /etc/hosts
+++ awk '{print $1}'
++ ssh-keyscan 192.168.0.1
+# 192.168.0.1 SSH-2.0-OpenSSH_6.6.1
+# 192.168.0.1 SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ for each in '$HOSTS' localhost
+++ grep cp-2 /etc/hosts
+++ awk '{print $1}'
++ ssh-keyscan 192.168.0.2
+# 192.168.0.2 SSH-2.0-OpenSSH_6.6.1
+# 192.168.0.2 SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ for each in '$HOSTS' localhost
+++ grep localhost /etc/hosts
+++ awk '{print $1}'
++ ssh-keyscan 127.0.0.1
+# 127.0.0.1 SSH-2.0-OpenSSH_6.6.1
+# 127.0.0.1 SSH-2.0-OpenSSH_6.6.1
+no hostkey alg
++ service ssh restart
+Redirecting to /bin/systemctl restart  ssh.service
+Failed to restart ssh.service: Unit ssh.service failed to load: No such file or directory.
++ rm -f /opt/.setup_in_process
